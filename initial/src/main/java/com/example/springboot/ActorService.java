@@ -7,7 +7,7 @@ import java.util.List;
 
 @Service
 public class ActorService {
-    private List<Actor> test()    {
+    public List<Actor> getActors()    {
         List<Actor> actors = new ArrayList<>();
         actors.add(new Actor().withFirstname("Dave").withRating(6).withLastname("Hampton").withWage(1000000));
         actors.add(new Actor().withFirstname("Tim").withRating(600).withLastname("Durham").withWage(1000000));

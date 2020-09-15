@@ -7,6 +7,7 @@ import java.util.StringJoiner;
 public class Film {
     private String filmtitle;
     private List<Actor> actors;
+    private String posterurl;
 
     public String getFilmtitle() {
         return filmtitle;
@@ -26,12 +27,20 @@ public class Film {
         return this;
     }
 
-    private Integer getRatings()    {
+    private Integer getActorRatings()    {
         Integer count=0;
         for (Actor actor : actors) {
             count+=actor.getRating();
         }
         return count;
+    }
+    public String getPosterurl() {
+        return posterurl;
+    }
+
+    public Film withPosterurl(String posterurl) {
+        this.posterurl = posterurl;
+        return this;
     }
 //
 //    @Override
@@ -45,6 +54,6 @@ public class Film {
 
     @Override
     public String toString() {
-        return String.format("film=%s,actors=%s,ratings=%s",filmtitle,actors,getRatings());
+        return String.format("filmtitle=%s,posterurl=%s,actors=%s,ratings=%s",filmtitle,posterurl,actors,getActorRatings());
     }
 }

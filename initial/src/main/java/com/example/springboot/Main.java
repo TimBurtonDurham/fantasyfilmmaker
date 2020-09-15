@@ -5,17 +5,18 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
-public class Tim {
+public class Main {
 
 	@Autowired
-	TimService timService;
+	FilmService filmService;
 
 
 
 	@RequestMapping("/tim")
 	public String index() {
-		return "Hello Tim! "+timService.greeting();
+		return "Hello Tim! "+ filmService.greeting();
 	}
+
 
 }
 

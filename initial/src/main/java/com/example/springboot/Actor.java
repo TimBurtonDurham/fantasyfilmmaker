@@ -1,5 +1,7 @@
 package com.example.springboot;
 
+import java.util.StringJoiner;
+
 public class Actor {
 
     private String firstname;
@@ -52,13 +54,15 @@ public class Actor {
         this.hype = hype;
         return this;
     }
+
     @Override
     public String toString() {
-        return "Actor{" +
-                "firstname='" + firstname + '\'' +
-                ", rating=" + rating +
-                ", wage=" + wage +
-                ", lastname='" + lastname + '\'' +
-                '}';
+        return new StringJoiner(", ", Actor.class.getSimpleName() + "[", "]")
+                .add("firstname='" + firstname + "'")
+                .add("rating=" + rating)
+                .add("lastname='" + lastname + "'")
+                .add("wage=" + wage)
+                .add("hype=" + hype)
+                .toString();
     }
 }
