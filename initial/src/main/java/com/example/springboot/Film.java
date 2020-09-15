@@ -8,6 +8,7 @@ public class Film {
     private String filmtitle;
     private List<Actor> actors;
     private String posterurl;
+    private String script;
 
     public String getFilmtitle() {
         return filmtitle;
@@ -15,6 +16,15 @@ public class Film {
 
     public Film withFilmTitle(String filmtitle) {
         this.filmtitle = filmtitle;
+        return this;
+    }
+
+    public String getScript() {
+        return script;
+    }
+
+    public Film withScript(String script) {
+        this.script = script;
         return this;
     }
 
@@ -33,6 +43,9 @@ public class Film {
             count+=actor.getRating();
         }
         return count;
+    }
+    private Integer getTotalRatings()    {
+        return getActorRatings();
     }
     public String getPosterurl() {
         return posterurl;
@@ -54,6 +67,6 @@ public class Film {
 
     @Override
     public String toString() {
-        return String.format("filmtitle=%s,posterurl=%s,actors=%s,ratings=%s",filmtitle,posterurl,actors,getActorRatings());
+        return String.format("filmtitle=%s,posterurl=%s,actors=%s,totalfilmratings=%s",filmtitle,posterurl,actors,getTotalRatings());
     }
 }

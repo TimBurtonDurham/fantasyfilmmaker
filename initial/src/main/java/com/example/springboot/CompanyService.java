@@ -11,15 +11,17 @@ public class CompanyService {
 
     @Autowired
     FilmService filmService;
+    @Autowired
+    BankAccountService bankAccountService;
 
     public String greeting(){
-        return "This is my service"+getFilms();
+        return "This is my service"+getCompanys();
     }
 
-    private List<FilmCompany> getFilms()   {
+    private List<FilmCompany> getCompanys()   {
         List<FilmCompany> companys = new ArrayList<>();
-        companys.add(new FilmCompany().withFilmCompanyName("Tims Company").withFilms(filmService.filmtest()));
-        companys.add(new FilmCompany().withFilmCompanyName("Daves Company").withFilms(filmService.filmtest()));
+        companys.add(new FilmCompany().withFilmCompanyName("Tims Company").withBankaccount(bankAccountService.getBankAccounts()).withFilms(filmService.getFilms()));
+        companys.add(new FilmCompany().withFilmCompanyName("Daves Company").withBankaccount(bankAccountService.getBankAccounts()).withFilms(filmService.getFilms()));
         return companys;
     }
 

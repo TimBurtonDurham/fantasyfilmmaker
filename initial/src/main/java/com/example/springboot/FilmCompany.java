@@ -5,6 +5,7 @@ import java.util.List;
 public class FilmCompany {
     private String filmcompanyname;
     private List films;
+    private List bankaccount;
 
     public String getFilmCompanyName() {
         return filmcompanyname;
@@ -25,8 +26,17 @@ public class FilmCompany {
         return this;
     }
 
+    public List getBankaccount() {
+        return bankaccount;
+    }
+
+    public FilmCompany withBankaccount(List bankaccount) {
+        this.bankaccount = bankaccount;
+        return this;
+    }
+
     @Override
     public String toString() {
-        return String.format("filmcompanyname=%s,films=%s",filmcompanyname, films);
+        return String.format("filmcompanyname=%s,films=%s,bankaccount=%s",filmcompanyname, films, bankaccount);
     }
 }
