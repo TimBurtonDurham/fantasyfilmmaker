@@ -16,7 +16,7 @@ public class Main {
 
 	@RequestMapping("/tim")
 	public String index() {
-		return "Hello Tim! "+ filmService.greeting()+"<br><br>Film Company "+companyService.greeting();
+		return "Films "+ filmService.greeting()+"<br><br>Film Company "+companyService.greeting();
 	}
 
 
