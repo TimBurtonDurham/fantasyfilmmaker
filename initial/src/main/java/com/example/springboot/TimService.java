@@ -25,12 +25,4 @@ public class TimService {
         return films;
     }
 
-    private Integer getWages()  {
-        List<Actor> actors = test();
-        Integer count=0;
-        for (Actor actor : actors)  {
-            count+=actor.getWage();
-        }
-        return count;
-    }
 }
