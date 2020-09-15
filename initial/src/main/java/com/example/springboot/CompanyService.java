@@ -10,15 +10,16 @@ import java.util.List;
 public class CompanyService {
 
     @Autowired
-    CompanyService CompanyService;
+    FilmService filmService;
 
     public String greeting(){
-        return "This is my service"+companytest();
+        return "This is my service"+getFilms();
     }
 
-    private List<FilmCompany> companytest()   {
+    private List<FilmCompany> getFilms()   {
         List<FilmCompany> companys = new ArrayList<>();
-        companys.add(new FilmCompany().withFilmCompanyName("Tims Company"));
+        companys.add(new FilmCompany().withFilmCompanyName("Tims Company").withFilms(filmService.filmtest()));
+        companys.add(new FilmCompany().withFilmCompanyName("Daves Company").withFilms(filmService.filmtest()));
         return companys;
     }
 

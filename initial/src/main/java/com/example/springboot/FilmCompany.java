@@ -27,6 +27,6 @@ public class FilmCompany {
 
     @Override
     public String toString() {
-        return String.format("filmcompanyname=%s",filmcompanyname);
+        return String.format("filmcompanyname=%s,films=%s",filmcompanyname, films);
     }
 }
