@@ -9,12 +9,14 @@ public class Main {
 
 	@Autowired
 	FilmService filmService;
+	@Autowired
+	CompanyService companyService;
 
 
 
 	@RequestMapping("/tim")
 	public String index() {
-		return "Hello Tim! "+ filmService.greeting();
+		return "Hello Tim! "+ filmService.greeting()+"<br><br>Film Company "+companyService.greeting();
 	}
 
 
