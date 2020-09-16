@@ -10,25 +10,34 @@ import java.util.Map;
 @Service
 public class RatingService {
 
-    private Map<Long,List<GenreActorMapping>> map = new HashMap<>();
+    private Map<String,List<Integer>> map = new HashMap<>();
 
-    public List<GenreActorMapping> getGenreMappingForActor(Long id, String genre) {
+    public List<Integer> getGenreMappingForActor(Long id, String genreIn) {
+        /*
+         select rating from table where actor=id and genre=genreIn
+
+         lets create some dummy data that returns a list - the key here is made up of id and genre (for testing only)
+         */
         if(map.isEmpty())   {
-            List<GenreActorMapping> actor1= new ArrayList<>();
-            actor1.add(new GenreActorMapping("1-Western", 10));
-            actor1.add(new GenreActorMapping("1-Western", 5));
-            actor1.add(new GenreActorMapping("1-Western", 12));
-            actor1.add(new GenreActorMapping("1-Western", 14));
-            actor1.add(new GenreActorMapping("2-Comedy", 11));
-            List<GenreActorMapping> actor2= new ArrayList<>();
-            actor2.add(new GenreActorMapping("1-Western", 10));
-            actor2.add(new GenreActorMapping("1-Western", 5));
-            actor2.add(new GenreActorMapping("1-Western", 12));
-            actor2.add(new GenreActorMapping("1-Western", 14));
-            actor2.add(new GenreActorMapping("2-Comedy", 12));
-            map.put(Long.valueOf(2), actor2);
+            List<Integer> actor1= new ArrayList<>();
+            actor1.add(10);
+            actor1.add(5);
+            actor1.add(12);
+            actor1.add(14);
+            actor1.add(11);
+            List<Integer> actor2= new ArrayList<>();
+            actor2.add(1);
+            actor2.add(50);
+            actor2.add(90);
+            map.put("1-Western", actor1);
+            map.put("2-Action", actor2);
         }
-        return map.get(id);
+        String key = String.format("%s-%s", id, genreIn);
+        System.out.println("Keys in map currently "+map.keySet());
+        System.out.println("Looking for key "+key);
+        List<Integer> integers = map.get(key);
+        System.out.println("Found "+integers);
+        return integers;
     }
 
 }

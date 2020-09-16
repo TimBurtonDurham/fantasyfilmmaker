@@ -57,14 +57,10 @@ public class Actor extends FfmEntity {
         return this;
     }
 
-    @Override
-    public String toString() {
-        return new StringJoiner(", ", Actor.class.getSimpleName() + "[", "]")
-                .add("firstname='" + firstname + "'")
-                .add("rating=" + rating)
-                .add("lastname='" + lastname + "'")
-                .add("wage=" + wage)
-                .add("hype=" + hype)
-                .toString();
+    @Override public String toString() {
+
+        return String
+            .format("Actor (firstname=%s, rating=%s, lastname=%s, wage=%s, hype=%s, id=%s)", this.firstname, this.rating,
+                this.lastname, this.wage, this.hype, this.getId());
     }
 }
