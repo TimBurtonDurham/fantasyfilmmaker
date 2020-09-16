@@ -12,7 +12,7 @@ public class RatingService {
 
     private Map<String,List<Integer>> map = new HashMap<>();
 
-    public List<Integer> getGenreMappingForActor(Long id, String genreIn) {
+    public List<Integer> getGenreMappingForActor(Integer id, String genreIn) {
         /*
          select rating from table where actor=id and genre=genreIn
 
