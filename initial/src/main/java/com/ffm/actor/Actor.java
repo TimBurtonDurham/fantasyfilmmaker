@@ -11,6 +11,7 @@ public class Actor extends FfmEntity {
     private String lastname;
     private Integer wage;
     private Integer hype;
+    private String actorimage;
 
     public String getFirstname() {
         return firstname;
@@ -57,6 +58,15 @@ public class Actor extends FfmEntity {
         return this;
     }
 
+    public String getActorimage() {
+        return actorimage;
+    }
+
+    public Actor withActorimage(String actorimage) {
+        this.actorimage = actorimage;
+        return this;
+    }
+
     @Override
     public String toString() {
         return new StringJoiner(", ", Actor.class.getSimpleName() + "[", "]")
@@ -65,6 +75,7 @@ public class Actor extends FfmEntity {
                 .add("lastname='" + lastname + "'")
                 .add("wage=" + wage)
                 .add("hype=" + hype)
+                .add("actorimage=" + actorimage)
                 .toString();
     }
 }

@@ -13,6 +13,7 @@ public class Film {
     private Script script;
     private String genre;
     private Director director;
+    private Actor leadactor;
 
     public String getFilmtitle() {
         return filmtitle;
@@ -45,6 +46,15 @@ public class Film {
 
     public Film withDirector(Director director) {
         this.director = director;
+        return this;
+    }
+
+    public Actor getLeadactor() {
+        return leadactor;
+    }
+
+    public Film withLeadactor(Actor leadactor) {
+        this.leadactor = leadactor;
         return this;
     }
 
