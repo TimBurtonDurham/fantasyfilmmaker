@@ -1,14 +1,18 @@
-package com.example.springboot;
+package com.ffm.film;
 
-import java.util.ArrayList;
+import com.ffm.director.Director;
+import com.ffm.script.Script;
+import com.ffm.actor.Actor;
+
 import java.util.List;
-import java.util.StringJoiner;
 
 public class Film {
     private String filmtitle;
     private List<Actor> actors;
     private String posterurl;
-    private String script;
+    private Script script;
+    private String genre;
+    private Director director;
 
     public String getFilmtitle() {
         return filmtitle;
@@ -19,12 +23,28 @@ public class Film {
         return this;
     }
 
-    public String getScript() {
+    public Script getScript() {
         return script;
     }
 
-    public Film withScript(String script) {
+    public Film withScript(Script script) {
         this.script = script;
+        return this;
+    }
+    public String getGenre() {
+        return genre;
+    }
+
+    public Film withGenre(String genre) {
+        this.genre = genre;
+        return this;
+    }
+    public Director getDirector() {
+        return director;
+    }
+
+    public Film withDirector(Director director) {
+        this.director = director;
         return this;
     }
 
@@ -44,9 +64,13 @@ public class Film {
         }
         return count;
     }
-    private Integer getTotalRatings()    {
+    private Integer getTotalActorRatings()    {
         return getActorRatings();
     }
+    private Integer getTotalRatings()    {
+        return getTotalActorRatings();
+    }
+
     public String getPosterurl() {
         return posterurl;
     }
@@ -55,6 +79,7 @@ public class Film {
         this.posterurl = posterurl;
         return this;
     }
+
 //
 //    @Override
 //    public String toString() {
@@ -67,6 +92,6 @@ public class Film {
 
     @Override
     public String toString() {
-        return String.format("filmtitle=%s,posterurl=%s,actors=%s,totalfilmratings=%s",filmtitle,posterurl,actors,getTotalRatings());
+        return String.format("filmtitle=%s,posterurl=%s,genre=%s,director=%s,actors=%s,totalfilmratings=%s",filmtitle,posterurl,genre,director,actors,getTotalRatings());
     }
 }

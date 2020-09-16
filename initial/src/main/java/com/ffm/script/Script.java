@@ -1,6 +1,4 @@
-package com.example.springboot;
-
-import java.util.StringJoiner;
+package com.ffm.script;
 
 public class Script {
 

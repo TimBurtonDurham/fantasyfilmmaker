@@ -1,8 +1,8 @@
-package com.example.springboot;
+package com.ffm.director;
 
 import java.util.StringJoiner;
 
-public class Actor {
+public class Director {
 
     private String firstname;
     private Integer rating;
@@ -14,7 +14,7 @@ public class Actor {
         return firstname;
     }
 
-    public Actor withFirstname(String firstname) {
+    public Director withFirstname(String firstname) {
         this.firstname = firstname;
         return this;
     }
@@ -23,7 +23,7 @@ public class Actor {
         return rating;
     }
 
-    public Actor withRating(Integer rating) {
+    public Director withRating(Integer rating) {
         this.rating = rating;
         return this;
     }
@@ -32,7 +32,7 @@ public class Actor {
         return lastname;
     }
 
-    public Actor withLastname(String lastname) {
+    public Director withLastname(String lastname) {
         this.lastname = lastname;
         return this;
     }
@@ -41,7 +41,7 @@ public class Actor {
         return wage;
     }
 
-    public Actor withWage(Integer wage) {
+    public Director withWage(Integer wage) {
         this.wage = wage;
         return this;
     }
@@ -50,14 +50,14 @@ public class Actor {
         return hype;
     }
 
-    public Actor withHype(Integer hype) {
+    public Director withHype(Integer hype) {
         this.hype = hype;
         return this;
     }
 
     @Override
     public String toString() {
-        return new StringJoiner(", ", Actor.class.getSimpleName() + "[", "]")
+        return new StringJoiner(", ", Director.class.getSimpleName() + "[", "]")
                 .add("firstname='" + firstname + "'")
                 .add("rating=" + rating)
                 .add("lastname='" + lastname + "'")

@@ -1,4 +1,4 @@
-package com.example.springboot;
+package com.ffm;
 
 import java.util.Arrays;
 

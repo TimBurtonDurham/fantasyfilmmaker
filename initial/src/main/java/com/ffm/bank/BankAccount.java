@@ -1,6 +1,4 @@
-package com.example.springboot;
-
-import java.util.List;
+package com.ffm.bank;
 
 public class BankAccount {
     private String accountnumber;

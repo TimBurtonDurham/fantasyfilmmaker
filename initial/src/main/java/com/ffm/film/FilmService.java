@@ -1,6 +1,7 @@
-package com.example.springboot;
+package com.ffm.film;
 
-import jdk.nashorn.internal.ir.debug.PrintVisitor;
+import com.ffm.director.DirectorService;
+import com.ffm.actor.ActorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,8 @@ public class FilmService {
 
     @Autowired
     ActorService actorService;
+    @Autowired
+    DirectorService directorService;
 
     public String greeting(){
         return "This is my service"+getFilms();
@@ -20,7 +23,7 @@ public class FilmService {
     public List<Film> getFilms()   {
         List<Film> films = new ArrayList<>();
         films.add(new Film().withFilmTitle("New Film Title").withActors(actorService.getActors()));
-        films.add(new Film().withFilmTitle("New Film Title 2").withPosterurl("https://miro.medium.com/max/700/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg").withActors(actorService.getActors()));
+        films.add(new Film().withFilmTitle("New Film Title 2").withPosterurl("https://miro.medium.com/max/700/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg").withActors(actorService.getActors()).withDirector(directorService.getDirectors()));
         return films;
     }
 

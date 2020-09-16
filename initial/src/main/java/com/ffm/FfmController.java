@@ -1,22 +1,23 @@
-package com.example.springboot;
+package com.ffm;
 
+import com.ffm.company.FilmCompanyService;
+import com.ffm.film.FilmService;
+import com.ffm.film.GenreActorMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
-public class Main {
+public class FfmController {
 
 	@Autowired
 	FilmService filmService;
 	@Autowired
-	CompanyService companyService;
-
-
+	FilmCompanyService filmCompanyService;
 
 	@RequestMapping("/tim")
 	public String index() {
-		return "Films "+ filmService.greeting()+"<br><br>Film Company "+companyService.greeting();
+		return "Film Company "+ filmCompanyService.greeting();
 	}
 
 
