@@ -1,8 +1,6 @@
 package com.ffm.actor;
 
-import com.ffm.FfmEntity;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
@@ -10,20 +8,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-// Used to be known as a DAO....
-@Repository
-public class ActorRepository {
+// Used to be known as a DOM....
+@Repository public class ActorRepository {
 
     // test  data
     Map<Integer, Actor> actors = new HashMap<>();
-
 
     /*
      for test data only... remove if you have a databse
      PostConstruct is called when Sprint Boot starts up and the ActorRepository is created for the first time
      */
-    @PostConstruct
-    private void init() {
+    @PostConstruct private void init() {
 
         Actor actor1 = new Actor().withFirstname("Dave").withRating(6).withLastname("Hampton").withWage(1000000);
         actor1.setId(1);
@@ -38,7 +33,7 @@ public class ActorRepository {
         actors.put(3, actor3);
     }
 
-    public List<Actor> getActors()    {
+    public List<Actor> getActors() {
         // select * from actors
         return new ArrayList<>(actors.values());
     }
@@ -49,6 +44,7 @@ public class ActorRepository {
     }
 
     public void saveActor(Actor actor) {
+
         Integer newId = actors.size();
         actor.setId(newId);
         actors.put(newId, actor);

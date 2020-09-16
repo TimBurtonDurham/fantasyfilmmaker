@@ -5,9 +5,10 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
-public class FilmGenreService {
-    public List<FilmGenre> getGenres()    {
+@Service public class FilmGenreService {
+
+    public List<FilmGenre> getGenres() {
+
         List<FilmGenre> genres = new ArrayList<>();
         genres.add(new FilmGenre().withGenreName("Action"));
         genres.add(new FilmGenre().withGenreName("Western"));

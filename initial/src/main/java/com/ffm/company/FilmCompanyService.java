@@ -17,7 +17,6 @@ import java.util.List;
 
     @Autowired RatingService ratingService;
 
-
     public List<FilmCompany> getCompanies() {
 
         List<FilmCompany> companys = new ArrayList<>();

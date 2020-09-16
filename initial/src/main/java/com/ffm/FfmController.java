@@ -43,12 +43,12 @@ import java.util.List;
     @GetMapping("/actor/rating/{id}/{genre}") public Integer getActorRating(@PathVariable Integer id, @PathVariable String genre) {
 
         List<Integer> genreMappingForActor = ratingService.getGenreMappingForActor(id, genre);
-        if (genreMappingForActor==null) {
+        if (genreMappingForActor == null) {
             return 0;
         }
-        Integer  rating = 0;
+        Integer rating = 0;
         for (Integer integer : genreMappingForActor) {
-            rating+=integer;
+            rating += integer;
         }
         return rating;
     }
