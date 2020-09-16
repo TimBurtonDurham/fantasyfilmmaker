@@ -47,14 +47,14 @@ public class FilmCompanyService {
             List through the films
              */
             System.out.println(film.getFilmtitle());
+            System.out.println(film.getGenre());
             List<Actor> actors = film.getActors();
             for (Actor actor : actors) {
                 /*
                 List throught the actors
                  */
-                System.out.println("Ratings for Actor in a Western "+actor);
-                checkRating(actor, "Western");
-                checkRating(actor, "Action");
+                System.out.println("Ratings for "+actor+" in a "+film.getGenre());
+                checkRating(actor,film.getGenre());
             }
         }
         companys.add(daves_company);

@@ -21,7 +21,7 @@ public class Actor extends FfmEntity {
         this.firstname = firstname;
         return this;
     }
-
+// These might be obsolete. create getRatings instead which returns the rating per genre for this actor? Or is that something that is done in the servuce?
     public Integer getRating() {
         return rating;
     }

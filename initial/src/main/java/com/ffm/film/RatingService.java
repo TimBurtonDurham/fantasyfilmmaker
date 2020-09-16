@@ -16,6 +16,10 @@ public class RatingService {
         /*
          select rating from table where actor=id and genre=genreIn
 
+        TIM >> In real world scenario the SQL is
+           select SUM(value) from ACTOR_GENRE_RATINGS where actor=id and genre=genreIn
+           So there would only be one value being returned.
+
          lets create some dummy data that returns a list - the key here is made up of id and genre (for testing only)
          */
         if(map.isEmpty())   {
@@ -33,8 +37,8 @@ public class RatingService {
             map.put("2-Action", actor2);
         }
         String key = String.format("%s-%s", id, genreIn);
-        System.out.println("Keys in map currently "+map.keySet());
-        System.out.println("Looking for key "+key);
+    //    System.out.println("Keys in map currently "+map.keySet());
+    //    System.out.println("Looking for key "+key);
         List<Integer> integers = map.get(key);
         System.out.println("Found "+integers);
         return integers;
