@@ -2,69 +2,69 @@ package com.ffm.script;
 
 public class Script {
 
-    private String scriptitle;
+  private String scriptitle;
 
-    private String scripttagline;
+  private String scripttagline;
 
-    private String scriptfulltext;
+  private String scriptfulltext;
 
-    private String scriptbrief;
+  private String scriptbrief;
 
-    private Integer hype;
+  private Integer hype;
 
-    public String getScriptitle() {
+  public String getScriptitle() {
 
-        return scriptitle;
-    }
+    return scriptitle;
+  }
 
-    public Script withScriptitle(String scriptitle) {
+  public Script withScriptitle(String scriptitle) {
 
-        this.scriptitle = scriptitle;
-        return this;
-    }
+    this.scriptitle = scriptitle;
+    return this;
+  }
 
-    public String getScripttagline() {
+  public String getScripttagline() {
 
-        return scripttagline;
-    }
+    return scripttagline;
+  }
 
-    public Script setScripttagline(String scripttagline) {
+  public Script setScripttagline(String scripttagline) {
 
-        this.scripttagline = scripttagline;
-        return this;
-    }
+    this.scripttagline = scripttagline;
+    return this;
+  }
 
-    public String getScriptfulltext() {
+  public String getScriptfulltext() {
 
-        return scriptfulltext;
-    }
+    return scriptfulltext;
+  }
 
-    public Script setScriptfulltext(String scriptfulltext) {
+  public Script setScriptfulltext(String scriptfulltext) {
 
-        this.scriptfulltext = scriptfulltext;
-        return this;
-    }
+    this.scriptfulltext = scriptfulltext;
+    return this;
+  }
 
-    public String getScriptbrief() {
+  public String getScriptbrief() {
 
-        return scriptbrief;
-    }
+    return scriptbrief;
+  }
 
-    public Script setScriptbrief(String scriptbrief) {
+  public Script setScriptbrief(String scriptbrief) {
 
-        this.scriptbrief = scriptbrief;
-        return this;
-    }
+    this.scriptbrief = scriptbrief;
+    return this;
+  }
 
-    public Integer getHype() {
+  public Integer getHype() {
 
-        return hype;
-    }
+    return hype;
+  }
 
-    public Script withHype(Integer hype) {
+  public Script withHype(Integer hype) {
 
-        this.hype = hype;
-        return this;
-    }
+    this.hype = hype;
+    return this;
+  }
 
 }

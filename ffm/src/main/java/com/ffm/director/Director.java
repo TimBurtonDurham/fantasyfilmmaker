@@ -4,74 +4,75 @@ import java.util.StringJoiner;
 
 public class Director {
 
-    private String firstname;
+  private String firstname;
 
-    private Integer rating;
+  private Integer rating;
 
-    private String lastname;
+  private String lastname;
 
-    private Integer wage;
+  private Integer wage;
 
-    private Integer hype;
+  private Integer hype;
 
-    public String getFirstname() {
+  public String getFirstname() {
 
-        return firstname;
-    }
+    return firstname;
+  }
 
-    public Director withFirstname(String firstname) {
+  public Director withFirstname(String firstname) {
 
-        this.firstname = firstname;
-        return this;
-    }
+    this.firstname = firstname;
+    return this;
+  }
 
-    public Integer getRating() {
+  public Integer getRating() {
 
-        return rating;
-    }
+    return rating;
+  }
 
-    public Director withRating(Integer rating) {
+  public Director withRating(Integer rating) {
 
-        this.rating = rating;
-        return this;
-    }
+    this.rating = rating;
+    return this;
+  }
 
-    public String getLastname() {
+  public String getLastname() {
 
-        return lastname;
-    }
+    return lastname;
+  }
 
-    public Director withLastname(String lastname) {
+  public Director withLastname(String lastname) {
 
-        this.lastname = lastname;
-        return this;
-    }
+    this.lastname = lastname;
+    return this;
+  }
 
-    public Integer getWage() {
+  public Integer getWage() {
 
-        return wage;
-    }
+    return wage;
+  }
 
-    public Director withWage(Integer wage) {
+  public Director withWage(Integer wage) {
 
-        this.wage = wage;
-        return this;
-    }
+    this.wage = wage;
+    return this;
+  }
 
-    public Integer getHype() {
+  public Integer getHype() {
 
-        return hype;
-    }
+    return hype;
+  }
 
-    public Director withHype(Integer hype) {
+  public Director withHype(Integer hype) {
 
-        this.hype = hype;
-        return this;
-    }
+    this.hype = hype;
+    return this;
+  }
 
-    @Override public String toString() {
+  @Override
+  public String toString() {
 
-        return new StringJoiner(", ", Director.class.getSimpleName() + "[", "]").add("firstname='" + firstname + "'").add("rating=" + rating).add("lastname='" + lastname + "'")
-            .add("wage=" + wage).add("hype=" + hype).toString();
-    }
+    return new StringJoiner(", ", Director.class.getSimpleName() + "[", "]").add("firstname='" + firstname + "'")
+        .add("rating=" + rating).add("lastname='" + lastname + "'").add("wage=" + wage).add("hype=" + hype).toString();
+  }
 }

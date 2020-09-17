@@ -2,16 +2,16 @@ package com.ffm.film;
 
 public class FilmGenre {
 
-    private String genrename;
+  private String genrename;
 
-    public String getGenrename() {
+  public String getGenrename() {
 
-        return genrename;
-    }
+    return genrename;
+  }
 
-    public FilmGenre withGenreName(String genrename) {
+  public FilmGenre withGenreName(String genrename) {
 
-        this.genrename = genrename;
-        return this;
-    }
+    this.genrename = genrename;
+    return this;
+  }
 }

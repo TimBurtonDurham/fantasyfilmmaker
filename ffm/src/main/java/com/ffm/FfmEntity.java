@@ -2,21 +2,21 @@ package com.ffm;
 
 public abstract class FfmEntity {
 
-    Integer id;
+  Integer id;
 
-    public Integer getId() {
+  public Integer getId() {
 
-        return id;
-    }
+    return id;
+  }
 
-    public void setId(Integer id) {
+  public void setId(Integer id) {
 
-        this.id = id;
-    }
+    this.id = id;
+  }
 
-    public FfmEntity withId(Integer id) {
+  public FfmEntity withId(Integer id) {
 
-        this.id = id;
-        return this;
-    }
+    this.id = id;
+    return this;
+  }
 }

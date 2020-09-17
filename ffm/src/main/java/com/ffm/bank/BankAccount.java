@@ -2,34 +2,35 @@ package com.ffm.bank;
 
 public class BankAccount {
 
-    private String accountnumber;
+  private String accountnumber;
 
-    private Integer currentbalance;
+  private Integer currentbalance;
 
-    public String getAccountnumber() {
+  public String getAccountnumber() {
 
-        return accountnumber;
-    }
+    return accountnumber;
+  }
 
-    public BankAccount withAccountnumber(String accountnumber) {
+  public BankAccount withAccountnumber(String accountnumber) {
 
-        this.accountnumber = accountnumber;
-        return this;
-    }
+    this.accountnumber = accountnumber;
+    return this;
+  }
 
-    public Integer getCurrentbalance() {
+  public Integer getCurrentbalance() {
 
-        return currentbalance;
-    }
+    return currentbalance;
+  }
 
-    public BankAccount withCurrentbalance(Integer currentbalance) {
+  public BankAccount withCurrentbalance(Integer currentbalance) {
 
-        this.currentbalance = currentbalance;
-        return this;
-    }
+    this.currentbalance = currentbalance;
+    return this;
+  }
 
-    @Override public String toString() {
+  @Override
+  public String toString() {
 
-        return String.format("accountnumber=%s,currentbalance=%s", accountnumber, currentbalance);
-    }
+    return String.format("accountnumber=%s,currentbalance=%s", accountnumber, currentbalance);
+  }
 }

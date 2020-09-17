@@ -12,55 +12,65 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.util.List;
 
-@RestController public class FfmController {
+@RestController
+public class FfmController {
 
-    @Autowired FilmService filmService;
+  @Autowired
+  FilmService filmService;
 
-    @Autowired FilmCompanyService filmCompanyService;
+  @Autowired
+  FilmCompanyService filmCompanyService;
 
-    @Autowired ActorService actorService;
+  @Autowired
+  ActorService actorService;
 
-    @Autowired RatingService ratingService;
+  @Autowired
+  RatingService ratingService;
 
-    @RequestMapping("/companies") public List<FilmCompany> getCompanies() {
+  @RequestMapping("/companies")
+  public List<FilmCompany> getCompanies() {
 
-        return filmCompanyService.getCompanies();
+    return filmCompanyService.getCompanies();
+  }
+
+  @RequestMapping("/actors")
+  public List<Actor> getActors() {
+
+    return actorService.getActors();
+  }
+
+  @GetMapping("/actor/{id}")
+  public Actor getActor(@PathVariable Integer id) {
+
+    return actorService.getActoById(id);
+  }
+
+  @GetMapping("/actor/rating/{id}/{genre}")
+  public Integer getActorRating(@PathVariable Integer id, @PathVariable String genre) {
+
+    List<Integer> genreMappingForActor = ratingService.getGenreMappingForActor(id, genre);
+    if (genreMappingForActor == null) {
+      return 0;
     }
-
-    @RequestMapping("/actors") public List<Actor> getActors() {
-
-        return actorService.getActors();
+    Integer rating = 0;
+    for (Integer integer : genreMappingForActor) {
+      rating += integer;
     }
+    return rating;
+  }
 
-    @GetMapping("/actor/{id}") public Actor getActor(@PathVariable Integer id) {
+  @RequestMapping("/films")
+  public List<Film> getFilms() {
 
-        return actorService.getActoById(id);
-    }
+    return filmService.getFilms();
+  }
 
-    @GetMapping("/actor/rating/{id}/{genre}") public Integer getActorRating(@PathVariable Integer id, @PathVariable String genre) {
+  @RequestMapping("/film/{id}")
+  public Film getFilm(@PathVariable Integer id) {
 
-        List<Integer> genreMappingForActor = ratingService.getGenreMappingForActor(id, genre);
-        if (genreMappingForActor == null) {
-            return 0;
-        }
-        Integer rating = 0;
-        for (Integer integer : genreMappingForActor) {
-            rating += integer;
-        }
-        return rating;
-    }
-
-    @RequestMapping("/films") public List<Film> getFilms() {
-
-        return filmService.getFilms();
-    }
-    @RequestMapping("/film/{id}") public Film getFilm(@PathVariable Integer id)  {
-        return filmService.getFilmById(id);
-    }
+    return filmService.getFilmById(id);
+  }
 
 }
-
-

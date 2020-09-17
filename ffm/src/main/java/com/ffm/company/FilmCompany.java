@@ -2,64 +2,64 @@ package com.ffm.company;
 
 import com.ffm.bank.BankAccount;
 import com.ffm.film.Film;
-
 import java.util.List;
 
 public class FilmCompany {
 
-    private String filmcompanyname;
+  private String filmcompanyname;
 
-    private List<Film> films;
+  private List<Film> films;
 
-    private List<BankAccount> bankaccount;
+  private List<BankAccount> bankaccount;
 
-    private Boolean isBankrupt;
+  private Boolean isBankrupt;
 
-    public String getFilmCompanyName() {
+  public String getFilmCompanyName() {
 
-        return filmcompanyname;
-    }
+    return filmcompanyname;
+  }
 
-    public FilmCompany withFilmCompanyName(String filmcompanyname) {
+  public FilmCompany withFilmCompanyName(String filmcompanyname) {
 
-        this.filmcompanyname = filmcompanyname;
-        return this;
-    }
+    this.filmcompanyname = filmcompanyname;
+    return this;
+  }
 
-    public List<Film> getFilms() {
+  public List<Film> getFilms() {
 
-        return films;
-    }
+    return films;
+  }
 
-    public FilmCompany withFilms(List<Film> films) {
+  public FilmCompany withFilms(List<Film> films) {
 
-        this.films = films;
-        return this;
-    }
+    this.films = films;
+    return this;
+  }
 
-    public List<BankAccount> getBankaccount() {
+  public List<BankAccount> getBankaccount() {
 
-        return bankaccount;
-    }
+    return bankaccount;
+  }
 
-    public FilmCompany withBankaccount(List<BankAccount> bankaccount) {
+  public FilmCompany withBankaccount(List<BankAccount> bankaccount) {
 
-        this.bankaccount = bankaccount;
-        return this;
-    }
+    this.bankaccount = bankaccount;
+    return this;
+  }
 
-    public void setBankrupt(Boolean bankrupt) {
+  public void setBankrupt(Boolean bankrupt) {
 
-        isBankrupt = bankrupt;
-    }
+    isBankrupt = bankrupt;
+  }
 
-    public Boolean isBankrupt() {
+  public Boolean isBankrupt() {
 
-        return isBankrupt;
-    }
+    return isBankrupt;
+  }
 
-    @Override public String toString() {
+  @Override
+  public String toString() {
 
-        return String.format("filmcompanyname=%s,films=%s,bankaccount=%s", filmcompanyname, films, bankaccount);
-    }
+    return String.format("filmcompanyname=%s,films=%s,bankaccount=%s", filmcompanyname, films, bankaccount);
+  }
 }

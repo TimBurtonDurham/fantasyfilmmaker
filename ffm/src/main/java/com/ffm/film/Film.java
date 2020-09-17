@@ -1,148 +1,139 @@
 package com.ffm.film;
 
 import com.ffm.FfmEntity;
-
 import com.ffm.actor.Actor;
 import com.ffm.director.Director;
 import com.ffm.script.Script;
-
 import java.util.List;
 import java.util.StringJoiner;
 
-public class Film extends FfmEntity{
+public class Film extends FfmEntity {
 
-    private String filmtitle;
+  private String filmtitle;
 
-    private List<Actor> actors;
+  private List<Actor> actors;
 
-    private String posterurl;
+  private String posterurl;
 
-    private Script script;
+  private Script script;
 
-    private String genre;
+  private String genre;
 
-    private Director director;
+  private Director director;
 
-    private Actor leadactor;
+  private Actor leadactor;
 
-    public String getFilmtitle() {
+  public String getFilmtitle() {
 
-        return filmtitle;
+    return filmtitle;
+  }
+
+  public Film withFilmTitle(String filmtitle) {
+
+    this.filmtitle = filmtitle;
+    return this;
+  }
+
+  public Script getScript() {
+
+    return script;
+  }
+
+  public Film withScript(Script script) {
+
+    this.script = script;
+    return this;
+  }
+
+  public String getGenre() {
+
+    return genre;
+  }
+
+  public Film withGenre(String genre) {
+
+    this.genre = genre;
+    return this;
+  }
+
+  public Director getDirector() {
+
+    return director;
+  }
+
+  public Film withDirector(Director director) {
+
+    this.director = director;
+    return this;
+  }
+
+  public Actor getLeadactor() {
+
+    return leadactor;
+  }
+
+  public Film withLeadactor(Actor leadactor) {
+
+    this.leadactor = leadactor;
+    return this;
+  }
+
+  public List getActors() {
+
+    return actors;
+  }
+
+  public Film withActors(List actors) {
+
+    this.actors = actors;
+    return this;
+  }
+
+  private Integer getActorRatings() {
+
+    Integer count = 0;
+    for (Actor actor : actors) {
+      count += actor.getRating();
     }
+    return count;
+  }
 
-    public Film withFilmTitle(String filmtitle) {
+  private Integer getTotalActorRatings() {
 
-        this.filmtitle = filmtitle;
-        return this;
-    }
+    return getActorRatings();
+  }
 
-    public Script getScript() {
+  private Integer getTotalRatings() {
 
-        return script;
-    }
+    return getTotalActorRatings();
+  }
 
-    public Film withScript(Script script) {
+  public String getPosterurl() {
 
-        this.script = script;
-        return this;
-    }
+    return posterurl;
+  }
 
-    public String getGenre() {
+  public Film withPosterurl(String posterurl) {
 
-        return genre;
-    }
+    this.posterurl = posterurl;
+    return this;
+  }
 
-    public Film withGenre(String genre) {
+  //
+  // @Override
+  // public String toString() {
+  // return new StringJoiner(", ", Film.class.getSimpleName() + "[", "]")
+  // .add("filmtitle='" + filmtitle + "'")
+  // .add("actors=" + actors)
+  // .add("ratings=" + getRatings())
+  // .toString();
+  // }
 
-        this.genre = genre;
-        return this;
-    }
+  @Override
+  public String toString() {
 
-    public Director getDirector() {
-
-        return director;
-    }
-
-    public Film withDirector(Director director) {
-
-        this.director = director;
-        return this;
-    }
-
-    public Actor getLeadactor() {
-
-        return leadactor;
-    }
-
-    public Film withLeadactor(Actor leadactor) {
-
-        this.leadactor = leadactor;
-        return this;
-    }
-
-    public List getActors() {
-
-        return actors;
-    }
-
-    public Film withActors(List actors) {
-
-        this.actors = actors;
-        return this;
-    }
-
-    private Integer getActorRatings() {
-
-        Integer count = 0;
-        for (Actor actor : actors) {
-            count += actor.getRating();
-        }
-        return count;
-    }
-
-    private Integer getTotalActorRatings() {
-
-        return getActorRatings();
-    }
-
-    private Integer getTotalRatings() {
-
-        return getTotalActorRatings();
-    }
-
-    public String getPosterurl() {
-
-        return posterurl;
-    }
-
-    public Film withPosterurl(String posterurl) {
-
-        this.posterurl = posterurl;
-        return this;
-    }
-
-    //
-    //    @Override
-    //    public String toString() {
-    //        return new StringJoiner(", ", Film.class.getSimpleName() + "[", "]")
-    //                .add("filmtitle='" + filmtitle + "'")
-    //                .add("actors=" + actors)
-    //                .add("ratings=" + getRatings())
-    //                .toString();
-    //    }
-
-    @Override
-    public String toString() {
-        return new StringJoiner(", ", Film.class.getSimpleName() + "[", "]")
-                .add("filmtitle='" + filmtitle + "'")
-                .add("actors=" + actors)
-                .add("posterurl='" + posterurl + "'")
-                .add("script=" + script)
-                .add("genre='" + genre + "'")
-                .add("director=" + director)
-                .add("leadactor=" + leadactor)
-                .toString();
-    }
+    return new StringJoiner(", ", Film.class.getSimpleName() + "[", "]").add("filmtitle='" + filmtitle + "'")
+        .add("actors=" + actors).add("posterurl='" + posterurl + "'").add("script=" + script)
+        .add("genre='" + genre + "'").add("director=" + director).add("leadactor=" + leadactor).toString();
+  }
 }
-
-
