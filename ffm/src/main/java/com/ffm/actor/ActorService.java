@@ -14,9 +14,9 @@ import java.util.List;
         return actorRepository.getActors();
     }
 
-    public Actor getActoById(Integer id) {
+    public Actor getActorById(Integer id) {
 
-        return actorRepository.getActoById(id);
+        return actorRepository.getActorById(id);
     }
 
 }

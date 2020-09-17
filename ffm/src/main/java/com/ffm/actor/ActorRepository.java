@@ -38,7 +38,7 @@ import java.util.Map;
         return new ArrayList<>(actors.values());
     }
 
-    public Actor getActoById(Integer id) {
+    public Actor getActorById(Integer id) {
         // select * from actors where id=id
         return actors.get(id);
     }

@@ -18,6 +18,8 @@ public class Actor extends FfmEntity {
 
     private String actorimage;
 
+    private Integer filmid;
+
     public String getFirstname() {
 
         return firstname;

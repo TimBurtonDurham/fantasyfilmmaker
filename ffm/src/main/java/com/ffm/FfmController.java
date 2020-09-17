@@ -7,6 +7,8 @@ import com.ffm.company.FilmCompanyService;
 import com.ffm.film.Film;
 import com.ffm.film.FilmService;
 import com.ffm.film.RatingService;
+import com.ffm.studio.Studio;
+import com.ffm.studio.StudioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +27,9 @@ import java.util.List;
 
     @Autowired RatingService ratingService;
 
+    @Autowired
+    StudioService studioService;
+
     @RequestMapping("/companies") public List<FilmCompany> getCompanies() {
 
         return filmCompanyService.getCompanies();
@@ -37,7 +42,7 @@ import java.util.List;
 
     @GetMapping("/actor/{id}") public Actor getActor(@PathVariable Integer id) {
 
-        return actorService.getActoById(id);
+        return actorService.getActorById(id);
     }
 
     @GetMapping("/actor/rating/{id}/{genre}") public Integer getActorRating(@PathVariable Integer id, @PathVariable String genre) {
@@ -61,6 +66,12 @@ import java.util.List;
         return filmService.getFilmById(id);
     }
 
+    @RequestMapping("/studios") public List<Studio> getStudios()    {
+        return studioService.getStudios();
+    }
+    @RequestMapping("/studio/{id}") public Studio getStudio(@PathVariable Integer id)   {
+        return studioService.getStudioById(id);
+    }
 }
 
 

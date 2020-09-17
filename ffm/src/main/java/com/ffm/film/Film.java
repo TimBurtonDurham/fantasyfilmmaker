@@ -5,6 +5,7 @@ import com.ffm.FfmEntity;
 import com.ffm.actor.Actor;
 import com.ffm.director.Director;
 import com.ffm.script.Script;
+import com.ffm.studio.Studio;
 
 import java.util.List;
 import java.util.StringJoiner;
@@ -24,6 +25,8 @@ public class Film extends FfmEntity{
     private Director director;
 
     private Actor leadactor;
+
+    private Studio studio;
 
     public String getFilmtitle() {
 
@@ -121,7 +124,15 @@ public class Film extends FfmEntity{
         return this;
     }
 
-    //
+    public Studio getStudio() {
+        return studio;
+    }
+
+    public Film withStudio(Studio studio) {
+        this.studio = studio;
+        return this;
+    }
+//
     //    @Override
     //    public String toString() {
     //        return new StringJoiner(", ", Film.class.getSimpleName() + "[", "]")
@@ -141,6 +152,7 @@ public class Film extends FfmEntity{
                 .add("genre='" + genre + "'")
                 .add("director=" + director)
                 .add("leadactor=" + leadactor)
+                .add("studio=" + studio)
                 .toString();
     }
 }
