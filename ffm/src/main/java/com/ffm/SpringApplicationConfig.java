@@ -14,5 +14,4 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableAsync
 public class SpringApplicationConfig implements WebMvcConfigurer {
 
-
 }
