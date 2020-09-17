@@ -32,12 +32,14 @@ public class FfmController {
   @Autowired
   RatingService ratingService;
 
-    @Autowired
-    StudioService studioService;
+  @Autowired
+  StudioService studioService;
 
-    @Autowired CompanyDao companyDao;
+  @Autowired
+  CompanyDao companyDao;
 
-    @RequestMapping("/companies") public List<FilmCompany> getCompanies() {
+  @RequestMapping("/companies")
+  public List<FilmCompany> getCompanies() {
 
     return filmCompanyService.getCompanies();
   }
@@ -57,8 +59,8 @@ public class FfmController {
   @GetMapping("/actor/{id}")
   public Actor getActor(@PathVariable Integer id) {
 
-        return actorService.getActorById(id);
-    }
+    return actorService.getActorById(id);
+  }
 
   @GetMapping("/actor/rating/{id}/{genre}")
   public Integer getActorRating(@PathVariable Integer id, @PathVariable String genre) {
@@ -86,10 +88,15 @@ public class FfmController {
     return filmService.getFilmById(id);
   }
 
-    @RequestMapping("/studios") public List<Studio> getStudios()    {
-        return studioService.getStudios();
-    }
-    @RequestMapping("/studio/{id}") public Studio getStudio(@PathVariable Integer id)   {
-        return studioService.getStudioById(id);
-    }
+  @RequestMapping("/studios")
+  public List<Studio> getStudios() {
+
+    return studioService.getStudios();
+  }
+
+  @RequestMapping("/studio/{id}")
+  public Studio getStudio(@PathVariable Integer id) {
+
+    return studioService.getStudioById(id);
+  }
 }

@@ -15,9 +15,9 @@ public class ActorService {
     return actorRepository.getActors();
   }
 
-    public Actor getActorById(Integer id) {
+  public Actor getActorById(Integer id) {
 
-        return actorRepository.getActorById(id);
-    }
+    return actorRepository.getActorById(id);
+  }
 
 }
