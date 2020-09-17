@@ -1,12 +1,15 @@
 package com.ffm.film;
 
+import com.ffm.FfmEntity;
+
 import com.ffm.actor.Actor;
 import com.ffm.director.Director;
 import com.ffm.script.Script;
 
 import java.util.List;
+import java.util.StringJoiner;
 
-public class Film {
+public class Film extends FfmEntity{
 
     private String filmtitle;
 
@@ -128,8 +131,18 @@ public class Film {
     //                .toString();
     //    }
 
-    @Override public String toString() {
-
-        return String.format("filmtitle=%s,posterurl=%s,genre=%s,director=%s,actors=%s,totalfilmratings=%s", filmtitle, posterurl, genre, director, actors, getTotalRatings());
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", Film.class.getSimpleName() + "[", "]")
+                .add("filmtitle='" + filmtitle + "'")
+                .add("actors=" + actors)
+                .add("posterurl='" + posterurl + "'")
+                .add("script=" + script)
+                .add("genre='" + genre + "'")
+                .add("director=" + director)
+                .add("leadactor=" + leadactor)
+                .toString();
     }
 }
+
+

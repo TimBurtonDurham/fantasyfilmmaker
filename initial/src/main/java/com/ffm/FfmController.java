@@ -57,6 +57,9 @@ import java.util.List;
 
         return filmService.getFilms();
     }
+    @RequestMapping("/film/{id}") public Film getFilm(@PathVariable Integer id)  {
+        return filmService.getFilmById(id);
+    }
 
 }
 
