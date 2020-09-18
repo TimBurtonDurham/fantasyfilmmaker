@@ -8,11 +8,11 @@
 		<version>2.3.3.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
+	<groupId>com.ffm</groupId>
 	<artifactId>ffm</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ffm</name>
-	<description>Fantsy Film Maker</description>
+	<description>Fantasy Film Maker</description>
 
 	<properties>
 		<java.version>1.8</java.version>
