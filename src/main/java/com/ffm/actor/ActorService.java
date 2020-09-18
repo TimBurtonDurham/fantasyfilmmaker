@@ -20,4 +20,8 @@ public class ActorService {
     return actorRepository.getActorById(id);
   }
 
+  public void saveActor(Actor actor) {
+    // do something to save to DB
+
+  }
 }

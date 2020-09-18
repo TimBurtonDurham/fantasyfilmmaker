@@ -85,6 +85,46 @@ public class Actor extends FfmEntity {
     return this;
   }
 
+  public void setFirstname(String firstname) {
+
+    this.firstname = firstname;
+  }
+
+  public void setRating(Integer rating) {
+
+    this.rating = rating;
+  }
+
+  public void setLastname(String lastname) {
+
+    this.lastname = lastname;
+  }
+
+  public void setWage(Integer wage) {
+
+    this.wage = wage;
+  }
+
+  public void setHype(Integer hype) {
+
+    this.hype = hype;
+  }
+
+  public void setActorimage(String actorimage) {
+
+    this.actorimage = actorimage;
+  }
+
+  public void setFilmid(Integer filmid) {
+
+    this.filmid = filmid;
+  }
+
+  public Integer getFilmid() {
+
+    return filmid;
+  }
+
   @Override
   public String toString() {
 
