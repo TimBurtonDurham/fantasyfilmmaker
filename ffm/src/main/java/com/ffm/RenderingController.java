@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
-
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
@@ -41,7 +40,8 @@ public class RenderingController {
   @PostMapping("/save/actor")
   public ModelAndView saveActor(@ModelAttribute("actor2") Actor updatedActor, BindingResult bindingResult) {
 
-    Actor actor = actorService.getActorById(updatedActor.getId()).withFirstname(updatedActor.getFirstname()).withLastname(updatedActor.getLastname());
+    Actor actor = actorService.getActorById(updatedActor.getId()).withFirstname(updatedActor.getFirstname())
+        .withLastname(updatedActor.getLastname());
     actorService.saveActor(actor);
     return new ModelAndView(String.format("redirect:%s/view/actor/%s", request.getContextPath(), actor.getId()));
   }

@@ -115,14 +115,14 @@ public class Actor extends FfmEntity {
     this.actorimage = actorimage;
   }
 
-  public void setFilmid(Integer filmid) {
-
-    this.filmid = filmid;
-  }
-
   public Integer getFilmid() {
 
     return filmid;
+  }
+
+  public void setFilmid(Integer filmid) {
+
+    this.filmid = filmid;
   }
 
   @Override
