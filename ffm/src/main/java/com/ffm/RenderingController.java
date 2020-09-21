@@ -38,7 +38,7 @@ public class RenderingController {
   }
 
   @PostMapping("/save/actor")
-  public ModelAndView saveActor(@ModelAttribute("actor2") Actor updatedActor, BindingResult bindingResult) {
+  public ModelAndView saveActor(@ModelAttribute("actor") Actor updatedActor, BindingResult bindingResult) {
 
     Actor actor = actorService.getActorById(updatedActor.getId()).withFirstname(updatedActor.getFirstname())
         .withLastname(updatedActor.getLastname());

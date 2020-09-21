@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @RestController
@@ -44,7 +45,7 @@ public class FfmController {
     return filmCompanyService.getCompanies();
   }
 
-  @RequestMapping("/companiesdb")
+  @GetMapping("/companiesdb")
   public List<String> getCompaniesFromDb() {
 
     return companyDao.getAllCompanies();
