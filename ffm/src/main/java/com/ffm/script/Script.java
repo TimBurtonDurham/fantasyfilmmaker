@@ -1,5 +1,7 @@
 package com.ffm.script;
 
+import java.util.StringJoiner;
+
 public class Script {
 
   private String scriptitle;
@@ -67,4 +69,14 @@ public class Script {
     return this;
   }
 
+  @Override
+  public String toString() {
+    return new StringJoiner(", ", Script.class.getSimpleName() + "[", "]")
+            .add("scriptitle='" + scriptitle + "'")
+            .add("scripttagline='" + scripttagline + "'")
+            .add("scriptfulltext='" + scriptfulltext + "'")
+            .add("scriptbrief='" + scriptbrief + "'")
+            .add("hype=" + hype)
+            .toString();
+  }
 }
