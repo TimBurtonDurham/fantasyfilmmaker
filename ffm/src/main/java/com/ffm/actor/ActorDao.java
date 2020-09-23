@@ -32,4 +32,8 @@ public class ActorDao {
 
   }
 
+  public void saveActor(Actor actor) {
+    jdbcTemplate.execute("INSERT INTO ACTOR values.......");
+
+  }
 }

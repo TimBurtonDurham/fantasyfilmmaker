@@ -24,7 +24,7 @@ public class ActorService {
   }
 
   public void saveActor(Actor actor) {
-    // do something to save to DB
+    actorDao.saveActor(actor);
 
   }
 }
