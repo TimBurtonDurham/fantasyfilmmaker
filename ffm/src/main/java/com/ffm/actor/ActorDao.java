@@ -18,11 +18,17 @@ public class ActorDao {
     return name;
 
   }
-  public Integer getActorRatingByGenre(Integer genre_id, Integer actor_id) {
 
-// RETURN JUST THE ACTOR_RATING VALUE FOR THIS ACTOR
-// SQL SELECT SUM(r.RATING_VALUE) as total_value FROM ACTOR_RATING r LEFT JOIN ACTOR a on a.id=actor_id AND r.GENRE_ID=genre_id WHERE a.id = 1;
-    return 20;
+  public Actor getActor(Integer actorId) {
+
+    return jdbcTemplate.queryForObject("select * from actor where id="+actorId, new ActorRowMapper());
+
+  }
+  public Integer getActorRatingByGenre(Integer genreId, Integer actorId) {
+
+    Integer integer = jdbcTemplate
+        .queryForObject(String.format("SELECT SUM(r.RATING_VALUE) as total_value FROM ACTOR_RATING r LEFT JOIN ACTOR a on a.id=r.actor_id AND r.GENRE_ID=%s WHERE a.id = %s;", genreId, actorId), Integer.class);
+    return integer;
 
   }
 

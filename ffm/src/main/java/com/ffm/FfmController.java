@@ -1,6 +1,7 @@
 package com.ffm;
 
 import com.ffm.actor.Actor;
+import com.ffm.actor.ActorDao;
 import com.ffm.actor.ActorService;
 import com.ffm.company.CompanyDao;
 import com.ffm.company.FilmCompany;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
+
 import java.util.List;
 
 @RestController
@@ -38,6 +39,8 @@ public class FfmController {
 
   @Autowired
   CompanyDao companyDao;
+
+  @Autowired ActorDao actorDao;
 
   @RequestMapping("/companies")
   public List<FilmCompany> getCompanies() {
@@ -62,6 +65,13 @@ public class FfmController {
 
     return actorService.getActorById(id);
   }
+
+  @GetMapping("/actor/rating/{id}")
+  public Integer getActorRating(@PathVariable Integer id) {
+
+    return actorDao.getActorRatingByGenre(1, id);
+  }
+
 
   @GetMapping("/actor/rating/{id}/{genre}")
   public Integer getActorRating(@PathVariable Integer id, @PathVariable String genre) {

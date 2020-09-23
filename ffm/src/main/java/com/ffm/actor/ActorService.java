@@ -10,6 +10,9 @@ public class ActorService {
   @Autowired
   ActorRepository actorRepository;
 
+  @Autowired
+  ActorDao actorDao;
+
   public List<Actor> getActors() {
 
     return actorRepository.getActors();
@@ -17,7 +20,7 @@ public class ActorService {
 
   public Actor getActorById(Integer id) {
 
-    return actorRepository.getActorById(id);
+    return actorDao.getActor(id);
   }
 
   public void saveActor(Actor actor) {
