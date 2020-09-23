@@ -21,8 +21,9 @@ public class ActorDao {
   public Integer getActorRatingByGenre(Integer genre_id, Integer actor_id) {
 
 // RETURN JUST THE ACTOR_RATING VALUE FOR THIS ACTOR
-// SQL SELECT SUM(r.RATING_VALUE) as total_value FROM ACTOR_RATING r LEFT JOIN ACTOR a on a.id=1 AND r.GENRE_ID=1 WHERE a.id = 1;
+// SQL SELECT SUM(r.RATING_VALUE) as total_value FROM ACTOR_RATING r LEFT JOIN ACTOR a on a.id=actor_id AND r.GENRE_ID=genre_id WHERE a.id = 1;
     return 20;
+
   }
 
 }

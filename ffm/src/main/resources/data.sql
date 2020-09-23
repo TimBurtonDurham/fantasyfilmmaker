@@ -5,9 +5,9 @@ INSERT INTO user (firstname, lastname) VALUES ('Dave', 'Hampton');
 
 INSERT INTO company (name, owner) VALUES ('Dave Company', 1);
 
-INSERT INTO film (title, owner) VALUES ('Daves First Film', 1);
-
 INSERT INTO script (title, owner, writtenby, tagline, maindescription, status) VALUES ('Daves First Film', 1, 1, 'The Script to end all scripts', 'This is the description of the film it will be very long. This is the description of the film it will be very long. This is the description of the film it will be very long. This is the description of the film it will be very long. ', 1);
+
+INSERT INTO film (title, script_id, owner) VALUES ('Daves First Film', 1, 1);
 
 INSERT INTO genre (genrename) VALUES ('Action');
 INSERT INTO genre (genrename) VALUES ('Adventure');
