@@ -1,12 +1,17 @@
 package com.ffm.company;
 
+import com.ffm.FfmEntity;
 import com.ffm.bank.BankAccount;
 import com.ffm.film.Film;
 import java.util.List;
 
-public class FilmCompany {
+public class FilmCompany extends FfmEntity {
 
   private String filmcompanyname;
+
+  private String twitter;
+
+  private String instagram;
 
   private List<Film> films;
 
@@ -57,9 +62,25 @@ public class FilmCompany {
     return isBankrupt;
   }
 
+  public String getTwitter() {
+    return twitter;
+  }
+
+  public FilmCompany withTwitter(String twitter) {
+    this.twitter = twitter;
+    return this;
+  }
+
+  public String getInstagram() {
+    return instagram;
+  }
+
+  public FilmCompany withInstagram(String instagram) {
+    this.instagram = instagram;
+    return this;
+  }
   @Override
   public String toString() {
-
     return String.format("filmcompanyname=%s,films=%s,bankaccount=%s", filmcompanyname, films, bankaccount);
   }
 }

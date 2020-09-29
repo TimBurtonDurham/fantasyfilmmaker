@@ -16,6 +16,8 @@ public class Script extends FfmEntity {
 
   private Integer hype;
 
+  private Integer writtenby;
+
   private Integer status;
 
   public String getScriptitle() {
@@ -82,6 +84,15 @@ public class Script extends FfmEntity {
     return this;
   }
 
+  public Integer getWrittenby() {
+    return writtenby;
+  }
+
+  public Script withWrittenby(Integer writtenby) {
+    this.writtenby = writtenby;
+    return this;
+  }
+
   @Override
   public String toString() {
     return new StringJoiner(", ", Script.class.getSimpleName() + "[", "]")
@@ -90,6 +101,7 @@ public class Script extends FfmEntity {
             .add("scriptfulltext='" + scriptfulltext + "'")
             .add("scriptbrief='" + scriptbrief + "'")
             .add("hype=" + hype)
+            .add("writtenby=" + writtenby)
             .add("status=" + status)
             .toString();
   }

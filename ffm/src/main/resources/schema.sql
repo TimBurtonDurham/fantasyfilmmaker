@@ -38,6 +38,19 @@ CREATE TABLE script
     FOREIGN KEY (status) REFERENCES script_status(id),
     FOREIGN KEY (writtenby) REFERENCES user(id)
   );
+CREATE TABLE script_contract
+  (
+    script_id   INT(9)                                                  NOT NULL,
+    buyer_id    INT(9)                                                  NOT NULL,
+    seller_id    INT(9)                                                  NOT NULL,
+    minbudget    INT(9)                                                  NOT NULL,
+    percentagerevenue    INT(9)                                                  NOT NULL,
+    expectedinproductiondate DATETIME                                         NOT NULL,
+    created_at DATETIME NOT NULL                         DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (script_id) REFERENCES script(id),
+    FOREIGN KEY (buyer_id) REFERENCES company(id),
+    FOREIGN KEY (seller_id) REFERENCES company(id)
+  );
 CREATE TABLE genre
   (
     id     INT(9) AUTO_INCREMENT,
@@ -72,6 +85,7 @@ CREATE TABLE film
   (
     id     INT(9) AUTO_INCREMENT,
     title  VARCHAR2(30 CHAR)                            NOT NULL,
+    budget  INT(9)                                      NULL,
     script_id  INT(9)                                   NOT NULL,
     genre_id  INT(9)                                    NULL,
     studio_id  INT(9)                                   NULL,
@@ -105,7 +119,6 @@ CREATE TABLE actor_rating
    created_at DATETIME NOT NULL                         DEFAULT CURRENT_TIMESTAMP,
    FOREIGN KEY(actor_id) REFERENCES actor(id),
    FOREIGN KEY(genre_id) REFERENCES genre(id)
-
 );
 CREATE TABLE director
   (
