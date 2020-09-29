@@ -1,6 +1,5 @@
 package com.ffm.director;
 
-import com.ffm.actor.Actor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
