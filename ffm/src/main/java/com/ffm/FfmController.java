@@ -101,7 +101,7 @@ public class FfmController {
   }
 
   @RequestMapping("/studios")
-  public List<Studio> getStudios() {
+  public List<String> getStudios() {
 
     return studioService.getStudios();
   }

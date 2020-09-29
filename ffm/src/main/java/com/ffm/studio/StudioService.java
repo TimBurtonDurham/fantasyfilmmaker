@@ -10,9 +10,11 @@ public class StudioService {
   @Autowired
   StudioRepository studioRepository;
 
-  public List<Studio> getStudios() {
+  @Autowired
+  StudioDao studioDao;
 
-    return studioRepository.getStudios();
+  public List<String> getStudios() {
+    return studioDao.getAllStudios();
   }
 
   public Studio getStudioById(Integer id) {
