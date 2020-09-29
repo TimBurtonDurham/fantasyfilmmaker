@@ -1,13 +1,20 @@
 package com.ffm.director;
 
+import com.ffm.actor.Actor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class DirectorService {
 
-  public Director getDirectors() {
+  @Autowired
+  DirectorDao directorDao;
 
-    return new Director().withFirstname("Alfred").withRating(6).withLastname("Hitchcock").withWage(1000000);
+  public Director getDirectorById(Integer id) {
+
+    return directorDao.getDirector(id);
   }
 
 }
