@@ -16,6 +16,13 @@ CREATE TABLE company
   PRIMARY KEY (id),
   FOREIGN KEY (owner) REFERENCES user(id)
 );
+CREATE TABLE script_status
+  (
+    id     INT(9) AUTO_INCREMENT,
+    statusname  VARCHAR2(30 CHAR)                                        NOT NULL,
+    deleted smallint(1)                                                 DEFAULT 0,
+    PRIMARY KEY (id)
+  );
 CREATE TABLE script
   (
     id     INT(9) AUTO_INCREMENT,
@@ -24,10 +31,11 @@ CREATE TABLE script
     writtenby  INT(9)                                               NOT NULL,
     tagline  VARCHAR2(MAX)                                          NOT NULL,
     maindescription  VARCHAR2(MAX)                                  NOT NULL,
-    status  SMALLINT(3)                                             NOT NULL,
+    status  SMALLINT(3)                                             DEFAULT 1,
     deleted smallint(1)                                             DEFAULT 0,
     PRIMARY KEY (id),
     FOREIGN KEY (owner) REFERENCES company(id),
+    FOREIGN KEY (status) REFERENCES script_status(id),
     FOREIGN KEY (writtenby) REFERENCES user(id)
   );
 CREATE TABLE genre
@@ -59,6 +67,7 @@ CREATE TABLE film
     script_id  INT(9)                                   NOT NULL,
     genre_id  INT(9)                                    NULL,
     studio_id  INT(9)                                   NULL,
+    status  INT(3)                                       DEFAULT 1,
     poster_url  VARCHAR2(MAX)                            DEFAULT 'filmposter_default.gif',
     owner  INT(9)                                       NOT NULL,
     deleted smallint(1)                                 DEFAULT 0,
@@ -66,7 +75,8 @@ CREATE TABLE film
     FOREIGN KEY (owner) REFERENCES company(id),
     FOREIGN KEY (script_id) REFERENCES script(id),
     FOREIGN KEY (genre_id) REFERENCES genre(id),
-    FOREIGN KEY (studio_id) REFERENCES studio(id)
+    FOREIGN KEY (studio_id) REFERENCES studio(id),
+    FOREIGN KEY (status) REFERENCES film_status(id)
   );
 CREATE TABLE actor
   (

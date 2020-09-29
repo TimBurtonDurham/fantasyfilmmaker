@@ -25,6 +25,11 @@ INSERT INTO film_status (statusname) VALUES ('StreamOfferAccepted');
 INSERT INTO film_status (statusname) VALUES ('Streaming');
 INSERT INTO film_status (statusname) VALUES ('Archived');
 
+INSERT INTO script_status (statusname) VALUES ('New');
+INSERT INTO script_status (statusname) VALUES ('For Sale');
+INSERT INTO script_status (statusname) VALUES ('AttachedToFilm');
+
+
 INSERT INTO user (firstname, lastname) VALUES ('Dave', 'Hampton');
 INSERT INTO user (firstname, lastname) VALUES ('Tim', 'Burton-Durham');
 
