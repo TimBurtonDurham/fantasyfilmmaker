@@ -1,8 +1,10 @@
 package com.ffm.script;
 
+import com.ffm.FfmEntity;
+
 import java.util.StringJoiner;
 
-public class Script {
+public class Script extends FfmEntity {
 
   private String scriptitle;
 
@@ -13,6 +15,8 @@ public class Script {
   private String scriptbrief;
 
   private Integer hype;
+
+  private Integer status;
 
   public String getScriptitle() {
 
@@ -30,7 +34,7 @@ public class Script {
     return scripttagline;
   }
 
-  public Script setScripttagline(String scripttagline) {
+  public Script withScripttagline(String scripttagline) {
 
     this.scripttagline = scripttagline;
     return this;
@@ -41,7 +45,7 @@ public class Script {
     return scriptfulltext;
   }
 
-  public Script setScriptfulltext(String scriptfulltext) {
+  public Script withScriptfulltext(String scriptfulltext) {
 
     this.scriptfulltext = scriptfulltext;
     return this;
@@ -69,6 +73,15 @@ public class Script {
     return this;
   }
 
+  public Integer getStatus() {
+    return status;
+  }
+
+  public Script withStatus(Integer status) {
+    this.status = status;
+    return this;
+  }
+
   @Override
   public String toString() {
     return new StringJoiner(", ", Script.class.getSimpleName() + "[", "]")
@@ -77,6 +90,7 @@ public class Script {
             .add("scriptfulltext='" + scriptfulltext + "'")
             .add("scriptbrief='" + scriptbrief + "'")
             .add("hype=" + hype)
+            .add("status=" + status)
             .toString();
   }
 }

@@ -1,13 +1,6 @@
 /*=============================
 =Conusmer Access
 ===============================*/
-INSERT INTO user (firstname, lastname) VALUES ('Dave', 'Hampton');
-
-INSERT INTO company (name, owner) VALUES ('Dave Company', 1);
-
-INSERT INTO script (title, owner, writtenby, tagline, maindescription, status) VALUES ('Daves First Film', 1, 1, 'The Script to end all scripts', 'This is the description of the film it will be very long. This is the description of the film it will be very long. This is the description of the film it will be very long. This is the description of the film it will be very long. ', 1);
-
-INSERT INTO film (title, script_id, owner) VALUES ('Daves First Film', 1, 1);
 
 INSERT INTO genre (genrename) VALUES ('Action');
 INSERT INTO genre (genrename) VALUES ('Adventure');
@@ -21,15 +14,24 @@ INSERT INTO genre (genrename) VALUES ('Science Fiction');
 INSERT INTO genre (genrename) VALUES ('War');
 INSERT INTO genre (genrename) VALUES ('Westerns');
 
-INSERT INTO actor (firstname, lastname, current_wage) VALUES ('Tom', 'Crooze', '1000000');
-INSERT INTO actor (firstname, lastname, current_wage) VALUES ('Bill', 'Pixton', '1500000');
-INSERT INTO actor (firstname, lastname, current_wage) VALUES ('Gary', 'Youngman', '1200000');
-INSERT INTO actor (firstname, lastname, current_wage) VALUES ('Bill', 'Merry', '1100000');
-INSERT INTO actor (firstname, lastname, current_wage) VALUES ('Johnny', 'Dipp', '1600000');
-INSERT INTO actor (firstname, lastname, current_wage) VALUES ('Ben', 'Staller', '2000000');
-INSERT INTO actor (firstname, lastname, current_wage) VALUES ('Harvey', 'Hangglider', '10000');
-INSERT INTO actor (firstname, lastname, current_wage) VALUES ('Kevin', 'Costnothing', '100000');
-INSERT INTO actor (firstname, lastname, current_wage) VALUES ('Jackie', 'Chin', '250000');
+INSERT INTO user (firstname, lastname) VALUES ('Dave', 'Hampton');
+
+INSERT INTO company (name, owner) VALUES ('Dave Company', 1);
+
+INSERT INTO script (title, owner, writtenby, tagline, maindescription, status) VALUES ('Daves First Film', 1, 1, 'The Script to end all scripts', 'This is the description of the film it will be very long. This is the description of the film it will be very long. This is the description of the film it will be very long. This is the description of the film it will be very long. ', 1);
+
+INSERT INTO film (title, script_id, genre_id, owner) VALUES ('Daves First Film', 1, 1, 1);
+
+
+INSERT INTO actor (firstname, lastname, currentwage) VALUES ('Tom', 'Crooze', '1000000');
+INSERT INTO actor (firstname, lastname, currentwage) VALUES ('Bill', 'Pixton', '1500000');
+INSERT INTO actor (firstname, lastname, currentwage) VALUES ('Gary', 'Youngman', '1200000');
+INSERT INTO actor (firstname, lastname, currentwage) VALUES ('Bill', 'Merry', '1100000');
+INSERT INTO actor (firstname, lastname, currentwage) VALUES ('Johnny', 'Dipp', '1600000');
+INSERT INTO actor (firstname, lastname, currentwage) VALUES ('Ben', 'Staller', '2000000');
+INSERT INTO actor (firstname, lastname, currentwage) VALUES ('Harvey', 'Hangglider', '10000');
+INSERT INTO actor (firstname, lastname, currentwage) VALUES ('Kevin', 'Costnothing', '100000');
+INSERT INTO actor (firstname, lastname, currentwage) VALUES ('Jackie', 'Chin', '250000');
 
 INSERT INTO actor_rating (actor_id, genre_id, rating_value) VALUES (1, 1, 10);
 INSERT INTO actor_rating (actor_id, genre_id, rating_value) VALUES (1, 2, 10);
@@ -51,4 +53,5 @@ INSERT INTO director (firstname, lastname, current_wage) VALUES ('Kathryn', 'Sma
 INSERT INTO director (firstname, lastname, current_wage) VALUES ('Stanley', 'Kubrock', '650000');
 INSERT INTO director (firstname, lastname, current_wage) VALUES ('Percy', 'Pigster', '750000');
 
+INSERT INTO film_actor (film_id, actor_id) VALUES (1, 1);
 COMMIT;

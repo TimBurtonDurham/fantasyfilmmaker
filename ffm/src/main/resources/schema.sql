@@ -66,8 +66,8 @@ CREATE TABLE actor
     id     INT(9) AUTO_INCREMENT,
     firstname  VARCHAR2(30 CHAR)                        NOT NULL,
     lastname  VARCHAR2(30 CHAR)                         NOT NULL,
-    current_wage  INT(9)                                DEFAULT 0,
-    image_url   VARCHAR2(MAX)                           DEFAULT 'actor_default.gif',
+    currentwage  INT(9)                                DEFAULT 0,
+    imageurl   VARCHAR2(MAX)                           DEFAULT 'actor_default.gif',
     owner  INT(9)                                       DEFAULT 0,
     deleted smallint(1)                                 DEFAULT 0,
     PRIMARY KEY (id)

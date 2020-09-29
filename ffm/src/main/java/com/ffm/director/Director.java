@@ -1,8 +1,9 @@
 package com.ffm.director;
 
+import com.ffm.FfmEntity;
 import java.util.StringJoiner;
 
-public class Director {
+public class Director extends FfmEntity {
 
   private String firstname;
 
