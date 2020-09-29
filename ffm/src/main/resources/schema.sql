@@ -56,9 +56,17 @@ CREATE TABLE studio
   (
     id     INT(9) AUTO_INCREMENT,
     studioname  VARCHAR2(30 CHAR)                                        NOT NULL,
+    studiocost  INT(9)                                                  DEFAULT 0,
     deleted smallint(1)                                                 DEFAULT 0,
     PRIMARY KEY (id)
   );
+CREATE TABLE studio_rating
+(
+   studio_id INT(9)                                     NOT NULL,
+   rating_value SMALLINT(3)                             NOT NULL,
+   created_at DATETIME NOT NULL                         DEFAULT CURRENT_TIMESTAMP,
+   FOREIGN KEY(studio_id) REFERENCES studio(id)
+);
 
 CREATE TABLE film
   (
@@ -118,7 +126,6 @@ CREATE TABLE director_rating
    created_at DATETIME NOT NULL                         DEFAULT CURRENT_TIMESTAMP,
    FOREIGN KEY(director_id) REFERENCES director(id),
    FOREIGN KEY(genre_id) REFERENCES genre(id)
-
 );
 CREATE TABLE film_actor
   (
@@ -137,6 +144,15 @@ CREATE TABLE film_actor_offer
     created_at DATETIME NOT NULL                         DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY(film_id) REFERENCES film(id),
     FOREIGN KEY(actor_id)   REFERENCES actor(id)
+  );
+CREATE TABLE film_director_offer
+  (
+    film_id     INT(9)                                  NOT NULL,
+    director_id    INT(9)                                  NOT NULL,
+    deleted smallint(1)                                 DEFAULT 0,
+    created_at DATETIME NOT NULL                         DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(film_id) REFERENCES film(id),
+    FOREIGN KEY(director_id)   REFERENCES director(id)
   );
 CREATE TABLE cinema
   (
@@ -158,12 +174,20 @@ CREATE TABLE cinema_offer
   );
 CREATE TABLE cinema_release
   (
+    id     INT(9) AUTO_INCREMENT,
     film_id     INT(9)                              NOT NULL,
     cinema_id     INT(3)                              NOT NULL,
     releasedate     DATETIME                              NOT NULL,
     enddate     DATETIME                              NOT NULL,
+    PRIMARY KEY (id),
     FOREIGN KEY(film_id) REFERENCES film(id),
     FOREIGN KEY(cinema_id)   REFERENCES cinema(id)
+  );
+CREATE TABLE cinema_result
+  (
+    release_id     INT(9)                              NOT NULL,
+    resulttime     DATETIME                              NOT NULL,
+    FOREIGN KEY(release_id) REFERENCES cinema_release(id)
   );
 
 COMMIT;

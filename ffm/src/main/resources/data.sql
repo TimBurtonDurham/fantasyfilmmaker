@@ -29,7 +29,6 @@ INSERT INTO script_status (statusname) VALUES ('New');
 INSERT INTO script_status (statusname) VALUES ('For Sale');
 INSERT INTO script_status (statusname) VALUES ('AttachedToFilm');
 
-
 INSERT INTO user (firstname, lastname) VALUES ('Dave', 'Hampton');
 INSERT INTO user (firstname, lastname) VALUES ('Tim', 'Burton-Durham');
 
@@ -73,6 +72,23 @@ INSERT INTO director (firstname, lastname, current_wage) VALUES ('Kathryn', 'Sma
 INSERT INTO director (firstname, lastname, current_wage) VALUES ('Stanley', 'Kubrock', '650000');
 INSERT INTO director (firstname, lastname, current_wage) VALUES ('Percy', 'Pigster', '750000');
 
+
+INSERT INTO director_rating (director_id, genre_id, rating_value) VALUES (2, 5, 10);
+INSERT INTO director_rating (director_id, genre_id, rating_value) VALUES (2, 4, 15);
+INSERT INTO director_rating (director_id, genre_id, rating_value) VALUES (2, 3, 15);
+INSERT INTO director_rating (director_id, genre_id, rating_value) VALUES (2, 2, 15);
+INSERT INTO director_rating (director_id, genre_id, rating_value) VALUES (2, 6, 15);
+INSERT INTO director_rating (director_id, genre_id, rating_value) VALUES (2, 5, 15);
+INSERT INTO director_rating (director_id, genre_id, rating_value) VALUES (1, 5, 15);
+INSERT INTO director_rating (director_id, genre_id, rating_value) VALUES (1, 5, 15);
+INSERT INTO director_rating (director_id, genre_id, rating_value) VALUES (1, 5, 15);
+INSERT INTO director_rating (director_id, genre_id, rating_value) VALUES (1, 3, 15);
+INSERT INTO director_rating (director_id, genre_id, rating_value) VALUES (1, 3, 15);
+INSERT INTO director_rating (director_id, genre_id, rating_value) VALUES (1, 7, 15);
+INSERT INTO director_rating (director_id, genre_id, rating_value) VALUES (1, 7, 15);
+INSERT INTO director_rating (director_id, genre_id, rating_value) VALUES (1, 7, 15);
+INSERT INTO director_rating (director_id, genre_id, rating_value) VALUES (1, 7, 15);
+
 INSERT INTO film_actor (film_id, actor_id) VALUES (1, 1);
 INSERT INTO film_actor (film_id, actor_id) VALUES (1, 2);
 INSERT INTO film_actor (film_id, actor_id) VALUES (1, 3);
@@ -88,4 +104,18 @@ INSERT INTO cinema (cinemaname, minaudience, maxaudience, mindays, maxdays) VALU
 INSERT INTO cinema (cinemaname, minaudience, maxaudience, mindays, maxdays) VALUES ('USA Cinema', 3500000, 7000000, 10, 15);
 INSERT INTO cinema (cinemaname, minaudience, maxaudience, mindays, maxdays) VALUES ('Indepedent Cinema', 2000000, 6000000, 7, 15);
 INSERT INTO cinema (cinemaname, minaudience, maxaudience, mindays, maxdays) VALUES ('Losers Cinema', 50, 250, 1, 7);
+
+
+INSERT INTO studio (studioname, studiocost) VALUES ('Dreamworks', 50000);
+INSERT INTO studio (studioname, studiocost) VALUES ('Marbella Studios', 5000000);
+INSERT INTO studio (studioname, studiocost) VALUES ('Hansel Productions', 5500000);
+INSERT INTO studio (studioname, studiocost) VALUES ('MGN Studios', 3500000);
+INSERT INTO studio (studioname, studiocost) VALUES ('Harvey House', 1700000);
+
+INSERT INTO studio_rating (studio_id, rating_value) VALUES (1, 7);
+INSERT INTO studio_rating (studio_id, rating_value) VALUES (2, 70);
+INSERT INTO studio_rating (studio_id, rating_value) VALUES (3, 75);
+INSERT INTO studio_rating (studio_id, rating_value) VALUES (4, 57);
+INSERT INTO studio_rating (studio_id, rating_value) VALUES (5, 37);
+
 COMMIT;

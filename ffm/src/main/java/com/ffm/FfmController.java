@@ -40,7 +40,8 @@ public class FfmController {
   @Autowired
   CompanyDao companyDao;
 
-  @Autowired ActorDao actorDao;
+  @Autowired
+  ActorDao actorDao;
 
   @RequestMapping("/companies")
   public List<FilmCompany> getCompanies() {
