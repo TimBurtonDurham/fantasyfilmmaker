@@ -142,10 +142,28 @@ CREATE TABLE cinema
   (
     id     INT(9) AUTO_INCREMENT,
     cinemaname  VARCHAR2(30 CHAR)                                        NOT NULL,
-    minaudience     INT(9)                                              NOT NULL,
     maxaudience     INT(9)                                              NOT NULL,
+    minaudience     INT(9)                                              NOT NULL,
+    mindays     INT(9)                                                  NOT NULL,
+    maxdays     INT(9)                                                  NOT NULL,
     deleted smallint(1)                                                 DEFAULT 0,
     PRIMARY KEY (id)
+  );
+CREATE TABLE cinema_offer
+  (
+    film_id     INT(9)                              NOT NULL,
+    noofdays     INT(3)                              DEFAULT 1,
+    deleted smallint(1)                                                 DEFAULT 0,
+    FOREIGN KEY(film_id) REFERENCES film(id)
+  );
+CREATE TABLE cinema_release
+  (
+    film_id     INT(9)                              NOT NULL,
+    cinema_id     INT(3)                              NOT NULL,
+    releasedate     DATETIME                              NOT NULL,
+    enddate     DATETIME                              NOT NULL,
+    FOREIGN KEY(film_id) REFERENCES film(id),
+    FOREIGN KEY(cinema_id)   REFERENCES cinema(id)
   );
 
 COMMIT;

@@ -74,4 +74,18 @@ INSERT INTO director (firstname, lastname, current_wage) VALUES ('Stanley', 'Kub
 INSERT INTO director (firstname, lastname, current_wage) VALUES ('Percy', 'Pigster', '750000');
 
 INSERT INTO film_actor (film_id, actor_id) VALUES (1, 1);
+INSERT INTO film_actor (film_id, actor_id) VALUES (1, 2);
+INSERT INTO film_actor (film_id, actor_id) VALUES (1, 3);
+INSERT INTO film_actor (film_id, actor_id) VALUES (1, 4);
+INSERT INTO film_actor (film_id, actor_id) VALUES (2, 1);
+INSERT INTO film_actor (film_id, actor_id) VALUES (2, 2);
+INSERT INTO film_actor (film_id, actor_id) VALUES (2, 4);
+
+INSERT INTO cinema (cinemaname, minaudience, maxaudience, mindays, maxdays) VALUES ('Metro Cinema', 100, 500, 5, 7);
+INSERT INTO cinema (cinemaname, minaudience, maxaudience, mindays, maxdays) VALUES ('Randy Cinema', 50, 400, 5, 7);
+INSERT INTO cinema (cinemaname, minaudience, maxaudience, mindays, maxdays) VALUES ('Worldwide Cinema', 5000000, 10000000, 10, 15);
+INSERT INTO cinema (cinemaname, minaudience, maxaudience, mindays, maxdays) VALUES ('UK Cinema', 1000000, 3000000, 10, 15);
+INSERT INTO cinema (cinemaname, minaudience, maxaudience, mindays, maxdays) VALUES ('USA Cinema', 3500000, 7000000, 10, 15);
+INSERT INTO cinema (cinemaname, minaudience, maxaudience, mindays, maxdays) VALUES ('Indepedent Cinema', 2000000, 6000000, 7, 15);
+INSERT INTO cinema (cinemaname, minaudience, maxaudience, mindays, maxdays) VALUES ('Losers Cinema', 50, 250, 1, 7);
 COMMIT;
