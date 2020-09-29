@@ -37,6 +37,13 @@ CREATE TABLE genre
     deleted smallint(1)                                                 DEFAULT 0,
     PRIMARY KEY (id)
   );
+CREATE TABLE film_status
+  (
+    id     INT(9) AUTO_INCREMENT,
+    statusname  VARCHAR2(30 CHAR)                                        NOT NULL,
+    deleted smallint(1)                                                 DEFAULT 0,
+    PRIMARY KEY (id)
+  );
 CREATE TABLE studio
   (
     id     INT(9) AUTO_INCREMENT,

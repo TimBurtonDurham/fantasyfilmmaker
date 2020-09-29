@@ -14,13 +14,28 @@ INSERT INTO genre (genrename) VALUES ('Science Fiction');
 INSERT INTO genre (genrename) VALUES ('War');
 INSERT INTO genre (genrename) VALUES ('Westerns');
 
+INSERT INTO film_status (statusname) VALUES ('New');
+INSERT INTO film_status (statusname) VALUES ('InCasting');
+INSERT INTO film_status (statusname) VALUES ('InProduction');
+INSERT INTO film_status (statusname) VALUES ('FilmingComplete');
+INSERT INTO film_status (statusname) VALUES ('WaitingForRelease');
+INSERT INTO film_status (statusname) VALUES ('InCinema');
+INSERT INTO film_status (statusname) VALUES ('CinemaRunComplete');
+INSERT INTO film_status (statusname) VALUES ('StreamOfferAccepted');
+INSERT INTO film_status (statusname) VALUES ('Streaming');
+INSERT INTO film_status (statusname) VALUES ('Archived');
+
 INSERT INTO user (firstname, lastname) VALUES ('Dave', 'Hampton');
+INSERT INTO user (firstname, lastname) VALUES ('Tim', 'Burton-Durham');
 
 INSERT INTO company (name, owner) VALUES ('Dave Company', 1);
+INSERT INTO company (name, owner) VALUES ('Tim Company', 2);
 
 INSERT INTO script (title, owner, writtenby, tagline, maindescription, status) VALUES ('Daves First Film', 1, 1, 'The Script to end all scripts', 'This is the description of the film it will be very long. This is the description of the film it will be very long. This is the description of the film it will be very long. This is the description of the film it will be very long. ', 1);
+INSERT INTO script (title, owner, writtenby, tagline, maindescription, status) VALUES ('Tims First Film', 2, 2, 'The Script to end all scripts', 'This is the description of the film it will be very long. This is the description of the film it will be very long. This is the description of the film it will be very long. This is the description of the film it will be very long. ', 1);
 
 INSERT INTO film (title, script_id, genre_id, owner) VALUES ('Daves First Film', 1, 1, 1);
+INSERT INTO film (title, script_id, genre_id, owner) VALUES ('Tims First Film', 2, 2, 2);
 
 
 INSERT INTO actor (firstname, lastname, currentwage) VALUES ('Tom', 'Crooze', '1000000');
