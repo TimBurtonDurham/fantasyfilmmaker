@@ -15,6 +15,7 @@ public class ActorRowMapper implements RowMapper<Actor> {
         actor.withLastname(rs.getString("lastname"));
         actor.withWage(rs.getInt("currentwage"));
         actor.withRating(rs.getInt("rating"));
+        actor.getFullname();
 
         return actor;
     }

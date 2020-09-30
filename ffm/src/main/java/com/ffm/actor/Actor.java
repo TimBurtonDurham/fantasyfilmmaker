@@ -11,6 +11,8 @@ public class Actor extends FfmEntity {
 
   private String lastname;
 
+  private String fullname;
+
   private Integer wage;
 
   private Integer hype;
@@ -50,6 +52,10 @@ public class Actor extends FfmEntity {
 
     this.lastname = lastname;
     return this;
+  }
+
+  public String getFullname() {
+    return getFirstname()+' '+getLastname();
   }
 
   public Integer getWage() {
