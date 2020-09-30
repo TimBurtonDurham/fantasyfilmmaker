@@ -18,6 +18,10 @@ public class ActorService {
     return actorRepository.getActors();
   }
 
+  public List<Actor> getActorsForFilm(Integer filmId) {
+    return actorDao.getActorsForFilm(filmId);
+  }
+
   public Actor getActorById(Integer id) {
 
     return actorDao.getActor(id);

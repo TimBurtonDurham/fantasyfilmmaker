@@ -73,6 +73,12 @@ public class FfmController {
     return actorDao.getActorRatingByGenre(1, id);
   }
 
+  @GetMapping("/actors/{film}")
+  public List<Actor> getActorByFilm(@PathVariable Integer film) {
+
+    return actorDao.getActorsForFilm(film);
+  }
+
 
   @GetMapping("/actor/rating/{id}/{genre}")
   public Integer getActorRating(@PathVariable Integer id, @PathVariable String genre) {

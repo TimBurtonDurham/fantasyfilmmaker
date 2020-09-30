@@ -1,6 +1,8 @@
 package com.ffm;
 
-public abstract class FfmEntity {
+import java.io.Serializable;
+
+public abstract class FfmEntity implements Serializable {
 
   Integer id;
 
