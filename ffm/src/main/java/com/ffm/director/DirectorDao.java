@@ -27,7 +27,7 @@ public class DirectorDao {
                     "FROM DIRECTOR_RATING r " +
                     "WHERE d.id=r.DIRECTOR_ID) as rating " +
                     "FROM director d " +
-                    "WHERE a.DELETED=0 AND a.id="+directorId+";"), new DirectorRowMapper());
+                    "WHERE d.DELETED=0 AND d.id="+directorId+";"), new DirectorRowMapper());
   }
 
   public Integer getDirectorRatingByGenre(Integer genreId, Integer directorId) {
