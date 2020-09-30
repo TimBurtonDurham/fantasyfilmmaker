@@ -3,6 +3,7 @@ package com.ffm.film;
 import com.ffm.FfmEntity;
 import com.ffm.actor.Actor;
 import com.ffm.director.Director;
+import com.ffm.genre.Genre;
 import com.ffm.script.Script;
 import com.ffm.studio.Studio;
 import java.util.List;
@@ -12,19 +13,22 @@ public class Film extends FfmEntity {
 
   private String filmtitle;
 
+  private String filmtagline;
+
   private List<Actor> actors;
 
   private String posterurl;
 
   private Script script;
 
-  private String genre;
+  private Genre genre;
 
   private Director director;
 
   private Actor leadactor;
 
   private Studio studio;
+
 
   public String getFilmtitle() {
 
@@ -34,6 +38,16 @@ public class Film extends FfmEntity {
   public Film withFilmTitle(String filmtitle) {
 
     this.filmtitle = filmtitle;
+    return this;
+  }
+  public String getFilmTagline() {
+
+    return filmtagline;
+  }
+
+  public Film withFilmTagline(String filmtagline) {
+
+    this.filmtagline = filmtagline;
     return this;
   }
 
@@ -48,12 +62,12 @@ public class Film extends FfmEntity {
     return this;
   }
 
-  public String getGenre() {
+  public Genre getGenre() {
 
     return genre;
   }
 
-  public Film withGenre(String genre) {
+  public Film withGenre(Genre genre) {
 
     this.genre = genre;
     return this;
@@ -144,10 +158,16 @@ public class Film extends FfmEntity {
 
   @Override
   public String toString() {
-
-    return new StringJoiner(", ", Film.class.getSimpleName() + "[", "]").add("filmtitle='" + filmtitle + "'")
-        .add("actors=" + actors).add("posterurl='" + posterurl + "'").add("script=" + script)
-        .add("genre='" + genre + "'").add("director=" + director).add("leadactor=" + leadactor).add("studio=" + studio)
-        .toString();
+    return new StringJoiner(", ", Film.class.getSimpleName() + "[", "]")
+            .add("filmtitle='" + filmtitle + "'")
+            .add("filmtagline='" + filmtagline + "'")
+            .add("actors=" + actors)
+            .add("posterurl='" + posterurl + "'")
+            .add("script=" + script)
+            .add("genre=" + genre)
+            .add("director=" + director)
+            .add("leadactor=" + leadactor)
+            .add("studio=" + studio)
+            .toString();
   }
 }

@@ -85,6 +85,7 @@ CREATE TABLE film
   (
     id     INT(9) AUTO_INCREMENT,
     title  VARCHAR2(30 CHAR)                            NOT NULL,
+    tagline  VARCHAR2(30 CHAR)                            NOT NULL,
     budget  INT(9)                                      NULL,
     script_id  INT(9)                                   NOT NULL,
     genre_id  INT(9)                                    NULL,

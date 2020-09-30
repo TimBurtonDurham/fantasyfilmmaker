@@ -38,8 +38,8 @@ INSERT INTO company (name, owner) VALUES ('Tim Company', 2);
 INSERT INTO script (title, owner, writtenby, tagline, maindescription, status) VALUES ('Daves First Film', 1, 1, 'The Script to end all scripts', 'This is the description of the film it will be very long. This is the description of the film it will be very long. This is the description of the film it will be very long. This is the description of the film it will be very long. ', 1);
 INSERT INTO script (title, owner, writtenby, tagline, maindescription, status) VALUES ('Tims First Film', 2, 2, 'The Script to end all scripts', 'This is the description of the film it will be very long. This is the description of the film it will be very long. This is the description of the film it will be very long. This is the description of the film it will be very long. ', 1);
 
-INSERT INTO film (title, script_id, genre_id, owner) VALUES ('Daves First Film', 1, 1, 1);
-INSERT INTO film (title, script_id, genre_id, owner) VALUES ('Tims First Film', 2, 2, 2);
+INSERT INTO film (title, tagline, script_id, genre_id, owner) VALUES ('Daves First Film', 'Tagline', 1, 1, 1);
+INSERT INTO film (title, tagline, script_id, genre_id, owner) VALUES ('Tims First Film', 'Tagline', 2, 2, 2);
 
 
 INSERT INTO actor (firstname, lastname, currentwage) VALUES ('Tom', 'Crooze', '1000000');

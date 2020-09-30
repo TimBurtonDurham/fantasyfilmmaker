@@ -3,7 +3,7 @@ package com.ffm;
 import com.ffm.actor.Actor;
 import com.ffm.actor.ActorDao;
 import com.ffm.actor.ActorService;
-import com.ffm.company.CompanyDao;
+import com.ffm.company.FilmCompanyDao;
 import com.ffm.company.FilmCompany;
 import com.ffm.company.FilmCompanyService;
 import com.ffm.film.Film;
@@ -38,21 +38,12 @@ public class FfmController {
   StudioService studioService;
 
   @Autowired
-  CompanyDao companyDao;
-
-  @Autowired
   ActorDao actorDao;
 
   @RequestMapping("/companies")
   public List<FilmCompany> getCompanies() {
 
     return filmCompanyService.getCompanies();
-  }
-
-  @GetMapping("/companiesdb")
-  public List<String> getCompaniesFromDb() {
-
-    return companyDao.getAllCompanies();
   }
 
   @RequestMapping("/actors")
