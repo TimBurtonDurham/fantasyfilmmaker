@@ -17,12 +17,9 @@ public class ActorDao {
     return jdbcTemplate.query(String.format(
             "SELECT a. *, (SELECT AVG(r.RATING_VALUE) " +
                     "FROM ACTOR_RATING r " +
-                    "WHERE r.GENRE_ID=f.GENRE_ID " +
-                    "AND a.id=r.ACTOR_ID) as rating " +
-                    "FROM film_actor fa " +
-                    "LEFT JOIN actor a on fa.ACTOR_ID=a.id " +
-                    "LEFT JOIN film f on f.id=fa.FILM_ID " +
-                    "WHERE  a.DELETED=0;"), new ActorRowMapper());
+                    "WHERE a.id=r.ACTOR_ID) as rating " +
+                    "FROM actor a " +
+                    "WHERE a.DELETED=0;"), new ActorRowMapper());
   }
   public Actor getActor(Integer actorId) {
     return jdbcTemplate.queryForObject(String.format(
