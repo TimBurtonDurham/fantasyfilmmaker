@@ -11,7 +11,8 @@ public class BankAccountRowMapper implements RowMapper<BankAccount> {
         BankAccount bankaccount = new BankAccount();
 
         bankaccount.setId(rs.getInt("id"));
-
+        bankaccount.withAccountnumber(rs.getString("accountnumber"));
+        bankaccount.withCurrentbalance(rs.getInt("currentbalance"));
         return bankaccount;
     }
 }

@@ -118,4 +118,9 @@ public class FfmController {
   public List<BankAccount> getBankAccounts() {
     return bankaccountService.getBankAccounts();
   }
+
+  @RequestMapping("/bankaccount/{id}")
+  public BankAccount getBankAccount(@PathVariable Integer id) {
+    return bankaccountService.getBankAccountById(id);
+  }
 }
