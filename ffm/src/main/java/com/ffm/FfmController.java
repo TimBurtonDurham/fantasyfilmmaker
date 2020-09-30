@@ -3,6 +3,8 @@ package com.ffm;
 import com.ffm.actor.Actor;
 import com.ffm.actor.ActorDao;
 import com.ffm.actor.ActorService;
+import com.ffm.bank.BankAccount;
+import com.ffm.bank.BankAccountService;
 import com.ffm.company.FilmCompanyDao;
 import com.ffm.company.FilmCompany;
 import com.ffm.company.FilmCompanyService;
@@ -36,6 +38,9 @@ public class FfmController {
 
   @Autowired
   StudioService studioService;
+
+  @Autowired
+  BankAccountService bankaccountService;
 
   @Autowired
   ActorDao actorDao;
@@ -107,5 +112,10 @@ public class FfmController {
   public Studio getStudio(@PathVariable Integer id) {
 
     return studioService.getStudioById(id);
+  }
+
+  @RequestMapping("/bankaccounts")
+  public List<BankAccount> getBankAccounts() {
+    return bankaccountService.getBankAccounts();
   }
 }

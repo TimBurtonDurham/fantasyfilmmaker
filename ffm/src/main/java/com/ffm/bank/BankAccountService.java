@@ -1,17 +1,21 @@
 package com.ffm.bank;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class BankAccountService {
 
+  @Autowired
+  BankAccountDao bankaccountDao;
+
   public List<BankAccount> getBankAccounts() {
 
-    List<BankAccount> accounts = new ArrayList<>();
-    accounts.add(new BankAccount().withCurrentbalance(1000000).withAccountnumber("AC52459512"));
-    return accounts;
+    return bankaccountDao.getAllBankAccounts();
+  }
+  public  BankAccount getBankAccountById(Integer id)  {
+    return bankaccountDao.getBankAccount(id);
   }
 
 }

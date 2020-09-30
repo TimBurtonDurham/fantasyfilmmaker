@@ -63,6 +63,7 @@ public class FilmCompany extends FfmEntity {
   }
 
   public String getTwitter() {
+
     return twitter;
   }
 
@@ -72,6 +73,7 @@ public class FilmCompany extends FfmEntity {
   }
 
   public String getInstagram() {
+
     return instagram;
   }
 

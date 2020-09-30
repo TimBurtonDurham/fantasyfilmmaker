@@ -35,6 +35,9 @@ INSERT INTO user (firstname, lastname) VALUES ('Tim', 'Burton-Durham');
 INSERT INTO company (name, owner) VALUES ('Dave Company', 1);
 INSERT INTO company (name, owner) VALUES ('Tim Company', 2);
 
+INSERT INTO bank_account (owner, accountnumber, currentbalance) VALUES (1, 1212211444, 500000);
+INSERT INTO bank_account (owner, accountnumber, currentbalance) VALUES (2, 1212211444, 500000);
+
 INSERT INTO script (title, owner, writtenby, tagline, maindescription, status) VALUES ('Daves First Film', 1, 1, 'The Script to end all scripts', 'This is the description of the film it will be very long. This is the description of the film it will be very long. This is the description of the film it will be very long. This is the description of the film it will be very long. ', 1);
 INSERT INTO script (title, owner, writtenby, tagline, maindescription, status) VALUES ('Tims First Film', 2, 2, 'The Script to end all scripts', 'This is the description of the film it will be very long. This is the description of the film it will be very long. This is the description of the film it will be very long. This is the description of the film it will be very long. ', 1);
 

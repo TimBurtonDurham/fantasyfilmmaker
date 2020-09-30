@@ -1,6 +1,8 @@
 package com.ffm.bank;
 
-public class BankAccount {
+import com.ffm.FfmEntity;
+
+public class BankAccount extends FfmEntity {
 
   private String accountnumber;
 

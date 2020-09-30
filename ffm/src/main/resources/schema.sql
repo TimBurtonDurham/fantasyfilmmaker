@@ -16,6 +16,16 @@ CREATE TABLE company
   PRIMARY KEY (id),
   FOREIGN KEY (owner) REFERENCES user(id)
 );
+CREATE TABLE bank_account
+(
+  id INT(9) AUTO_INCREMENT,
+  owner  INT(9)                                     NULL,
+  accountnumber  INT(9)                             NULL,
+  currentbalance  INT(9)                             NULL,
+  deleted smallint(1)                               DEFAULT 0,
+  PRIMARY KEY (id),
+  FOREIGN KEY (owner) REFERENCES company(id)
+);
 CREATE TABLE script_status
   (
     id     INT(9) AUTO_INCREMENT,

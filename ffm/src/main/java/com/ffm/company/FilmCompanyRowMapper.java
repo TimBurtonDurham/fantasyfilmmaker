@@ -12,6 +12,8 @@ public class FilmCompanyRowMapper implements RowMapper<FilmCompany> {
 
         filmcompany.setId(rs.getInt("id"));
         filmcompany.withFilmCompanyName(rs.getString("name"));
+        filmcompany.withTwitter(rs.getString("twitter"));
+        filmcompany.withInstagram(rs.getString("instagram"));
         return filmcompany;
     }
 }
