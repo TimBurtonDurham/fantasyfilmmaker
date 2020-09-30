@@ -68,12 +68,12 @@ INSERT INTO actor_rating (actor_id, genre_id, rating_value) VALUES (2, 4, 10);
 INSERT INTO actor_rating (actor_id, genre_id, rating_value) VALUES (2, 5, 10);
 INSERT INTO actor_rating (actor_id, genre_id, rating_value) VALUES (2, 5, 15);
 
-INSERT INTO director (firstname, lastname, current_wage) VALUES ('Alfred', 'Bitchcock', '250000');
-INSERT INTO director (firstname, lastname, current_wage) VALUES ('Steven', 'Speilberk', '350000');
-INSERT INTO director (firstname, lastname, current_wage) VALUES ('Christopher', 'Yeslan', '450000');
-INSERT INTO director (firstname, lastname, current_wage) VALUES ('Kathryn', 'Smallandlow', '550000');
-INSERT INTO director (firstname, lastname, current_wage) VALUES ('Stanley', 'Kubrock', '650000');
-INSERT INTO director (firstname, lastname, current_wage) VALUES ('Percy', 'Pigster', '750000');
+INSERT INTO director (firstname, lastname, currentwage) VALUES ('Alfred', 'Bitchcock', '250000');
+INSERT INTO director (firstname, lastname, currentwage) VALUES ('Steven', 'Speilberk', '350000');
+INSERT INTO director (firstname, lastname, currentwage) VALUES ('Christopher', 'Yeslan', '450000');
+INSERT INTO director (firstname, lastname, currentwage) VALUES ('Kathryn', 'Smallandlow', '550000');
+INSERT INTO director (firstname, lastname, currentwage) VALUES ('Stanley', 'Kubrock', '650000');
+INSERT INTO director (firstname, lastname, currentwage) VALUES ('Percy', 'Pigster', '750000');
 
 
 INSERT INTO director_rating (director_id, genre_id, rating_value) VALUES (2, 5, 10);

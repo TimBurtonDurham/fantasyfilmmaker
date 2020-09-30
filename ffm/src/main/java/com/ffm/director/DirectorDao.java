@@ -12,13 +12,22 @@ public class DirectorDao {
   @Autowired
   JdbcTemplate jdbcTemplate;
 
-  public List<String> getAllDirectors() {
-    return jdbcTemplate.queryForList("select * from director", String.class);
-
+  public List<Director> getAllDirectors() {
+    return jdbcTemplate.query(String.format(
+            "SELECT d. *, (SELECT AVG(r.RATING_VALUE) " +
+                    "FROM DIRECTOR_RATING r " +
+                    "WHERE d.id=r.DIRECTOR_ID) as rating " +
+                    "FROM director d " +
+                    "WHERE d.DELETED=0;"), new DirectorRowMapper());
   }
 
   public Director getDirector(Integer directorId) {
-    return jdbcTemplate.queryForObject("select * from director where id="+directorId, new DirectorRowMapper());
+    return jdbcTemplate.queryForObject(String.format(
+            "SELECT d. *, (SELECT AVG(r.RATING_VALUE) " +
+                    "FROM DIRECTOR_RATING r " +
+                    "WHERE d.id=r.DIRECTOR_ID) as rating " +
+                    "FROM director d " +
+                    "WHERE a.DELETED=0 AND a.id="+directorId+";"), new DirectorRowMapper());
   }
 
   public Integer getDirectorRatingByGenre(Integer genreId, Integer directorId) {

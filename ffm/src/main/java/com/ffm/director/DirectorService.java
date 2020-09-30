@@ -12,8 +12,11 @@ public class DirectorService {
   DirectorDao directorDao;
 
   public Director getDirectorById(Integer id) {
-
     return directorDao.getDirector(id);
   }
+  public List<Director> getDirectors() {
+    return directorDao.getAllDirectors();
+  }
+
 
 }
