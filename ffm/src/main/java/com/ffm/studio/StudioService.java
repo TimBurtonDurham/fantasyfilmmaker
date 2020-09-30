@@ -8,9 +8,6 @@ import java.util.List;
 public class StudioService {
 
   @Autowired
-  StudioRepository studioRepository;
-
-  @Autowired
   StudioDao studioDao;
 
   public List<String> getStudios() {
@@ -19,7 +16,7 @@ public class StudioService {
 
   public Studio getStudioById(Integer id) {
 
-    return studioRepository.getStudioById(id);
+    return studioDao.getStudio(id);
   }
 
 }

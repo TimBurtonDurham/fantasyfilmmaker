@@ -8,14 +8,11 @@ import java.util.List;
 public class ActorService {
 
   @Autowired
-  ActorRepository actorRepository;
-
-  @Autowired
   ActorDao actorDao;
 
   public List<Actor> getActors() {
 
-    return actorRepository.getActors();
+    return actorDao.getAllActors();
   }
 
   public List<Actor> getActorsForFilm(Integer filmId) {
