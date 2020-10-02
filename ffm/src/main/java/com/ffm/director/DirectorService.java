@@ -15,6 +15,7 @@ public class DirectorService {
     return directorDao.getDirector(id);
   }
   public List<Director> getDirectors() {
+
     return directorDao.getAllDirectors();
   }
 

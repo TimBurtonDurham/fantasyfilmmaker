@@ -15,6 +15,7 @@ public class ScriptRowMapper implements RowMapper<Script> {
         script.withScripttagline(rs.getString("tagline"));
         script.withScriptfulltext(rs.getString("maindescription"));
         script.withStatus(rs.getInt("status"));
+        script.withStatusname(rs.getString("statusname"));
 
         return script;
     }

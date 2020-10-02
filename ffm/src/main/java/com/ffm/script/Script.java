@@ -20,6 +20,8 @@ public class Script extends FfmEntity {
 
   private Integer status;
 
+  private String statusname;
+
   public String getScriptitle() {
 
     return scriptitle;
@@ -76,11 +78,20 @@ public class Script extends FfmEntity {
   }
 
   public Integer getStatus() {
+
     return status;
   }
 
   public Script withStatus(Integer status) {
     this.status = status;
+    return this;
+  }
+
+  public String getStatusname() {
+    return statusname;
+  }
+  public Script withStatusname(String statusname)  {
+    this.statusname = statusname;
     return this;
   }
 

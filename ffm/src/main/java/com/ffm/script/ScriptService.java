@@ -3,6 +3,8 @@ package com.ffm.script;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ScriptService {
 
@@ -13,5 +15,10 @@ public class ScriptService {
 
     return scriptDao.getScript(id);
   }
+  public List<Script> getScripts() {
+
+    return scriptDao.getAllScripts();
+  }
+
 
 }

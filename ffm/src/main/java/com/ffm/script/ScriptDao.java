@@ -12,15 +12,20 @@ public class ScriptDao {
   @Autowired
   JdbcTemplate jdbcTemplate;
 
-  public List<String> getAllScripts() {
-    return jdbcTemplate.queryForList("select * from script", String.class);
-
+  public List<Script> getAllScripts() {
+    return jdbcTemplate.query(String.format(
+            "SELECT s.*, ss.statusname " +
+                    "FROM SCRIPT s " +
+                    "LEFT JOIN SCRIPT_STATUS ss on s.status=ss.id " +
+                    "WHERE s.DELETED=0;"), new ScriptRowMapper());
   }
-
   public Script getScript(Integer scriptId) {
-    return jdbcTemplate.queryForObject("select * from script where id="+scriptId, new ScriptRowMapper());
+    return jdbcTemplate.queryForObject(String.format(
+            "SELECT s.*, ss.statusname " +
+                    "FROM SCRIPT s " +
+                    "LEFT JOIN SCRIPT_STATUS ss on s.status=ss.id " +
+                    "WHERE s.DELETED=0 AND s.id="+scriptId+";"), new ScriptRowMapper());
   }
-
   public void saveScript(Script script) {
     jdbcTemplate.execute("INSERT INTO DIRECTOR values.......");
 

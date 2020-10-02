@@ -16,6 +16,8 @@ import com.ffm.film.FilmService;
 import com.ffm.film.RatingService;
 import com.ffm.genre.Genre;
 import com.ffm.genre.GenreService;
+import com.ffm.script.Script;
+import com.ffm.script.ScriptService;
 import com.ffm.studio.Studio;
 import com.ffm.studio.StudioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,6 +57,9 @@ public class FfmController {
 
   @Autowired
   GenreService genreService;
+
+  @Autowired
+  ScriptService scriptService;
 
   @Autowired
   ActorDao actorDao;
@@ -170,5 +175,15 @@ public class FfmController {
   @RequestMapping("/cinema/{id}")
   public Cinema getCinema(@PathVariable Integer id) {
     return cinemaService.getCinemaById(id);
+  }
+
+  @RequestMapping("/scripts")
+  public List<Script> getScripts()  {
+    return scriptService.getScripts();
+  }
+
+  @RequestMapping("/script/{id}")
+  public Script getScript(@PathVariable Integer id) {
+    return scriptService.getScriptById(id);
   }
 }
