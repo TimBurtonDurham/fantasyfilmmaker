@@ -22,6 +22,6 @@ public class FilmDao {
     return jdbcTemplate.queryForObject(String.format(
             "SELECT f. * " +
                     "FROM FILM f " +
-                    "WHERE a.DELETED=0 AND a.id="+filmId+";"), new FilmRowMapper());
+                    "WHERE f.DELETED=0 AND f.id="+filmId+";"), new FilmRowMapper());
   }
 }
