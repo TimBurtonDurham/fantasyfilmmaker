@@ -8,8 +8,15 @@ public class Cinema extends FfmEntity {
 
   private String cinemaname;
 
-  public String getCinemaname() {
+  private Integer minaudience;
 
+  private Integer maxaudience;
+
+  private Integer mindays;
+
+  private Integer maxdays;
+
+  public String getCinemaname() {
     return cinemaname;
   }
 
@@ -18,10 +25,50 @@ public class Cinema extends FfmEntity {
     return this;
   }
 
+  public Integer getMinaudience() {
+    return minaudience;
+  }
+
+  public Cinema withMinaudience(Integer minaudience) {
+    this.minaudience = minaudience;
+    return this;
+  }
+
+  public Integer getMaxaudience() {
+    return maxaudience;
+  }
+
+  public Cinema withMaxaudience(Integer maxaudience) {
+    this.maxaudience = maxaudience;
+    return this;
+  }
+
+  public Integer getMindays() {
+    return mindays;
+  }
+
+  public Cinema withMindays(Integer mindays) {
+    this.mindays = mindays;
+    return this;
+  }
+
+  public Integer getMaxdays() {
+    return maxdays;
+  }
+
+  public Cinema withMaxdays(Integer maxdays) {
+    this.maxdays = maxdays;
+    return this;
+  }
+
   @Override
   public String toString() {
     return new StringJoiner(", ", Cinema.class.getSimpleName() + "[", "]")
             .add("cinemaname='" + cinemaname + "'")
+            .add("minaudience=" + minaudience)
+            .add("maxaudience=" + maxaudience)
+            .add("mindays=" + mindays)
+            .add("maxdays=" + maxdays)
             .toString();
   }
 }

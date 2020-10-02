@@ -5,6 +5,8 @@ import com.ffm.actor.ActorDao;
 import com.ffm.actor.ActorService;
 import com.ffm.bank.BankAccount;
 import com.ffm.bank.BankAccountService;
+import com.ffm.cinema.Cinema;
+import com.ffm.cinema.CinemaService;
 import com.ffm.company.FilmCompany;
 import com.ffm.company.FilmCompanyService;
 import com.ffm.director.Director;
@@ -47,6 +49,9 @@ public class FfmController {
 
   @Autowired
   BankAccountService bankaccountService;
+
+  @Autowired
+  CinemaService cinemaService;
 
   @Autowired
   GenreService genreService;
@@ -155,5 +160,15 @@ public class FfmController {
   @RequestMapping("/genre/{id}")
   public Genre getGenre(@PathVariable Integer id) {
     return genreService.getGenreById(id);
+  }
+
+  @RequestMapping("/cinemas")
+  public List<Cinema> getCinemas()  {
+    return cinemaService.getCinemas();
+  }
+
+  @RequestMapping("/cinema/{id}")
+  public Cinema getCinema(@PathVariable Integer id) {
+    return cinemaService.getCinemaById(id);
   }
 }
