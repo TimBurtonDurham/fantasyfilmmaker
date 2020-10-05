@@ -19,8 +19,6 @@ public class Actor extends FfmEntity {
 
   private String actorimage;
 
-  private Integer filmid;
-
   public String getFirstname() {
 
     return firstname;
@@ -119,16 +117,6 @@ public class Actor extends FfmEntity {
   public void setActorimage(String actorimage) {
 
     this.actorimage = actorimage;
-  }
-
-  public Integer getFilmid() {
-
-    return filmid;
-  }
-
-  public void setFilmid(Integer filmid) {
-
-    this.filmid = filmid;
   }
 
   @Override

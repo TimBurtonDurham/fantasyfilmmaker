@@ -210,6 +210,7 @@ CREATE TABLE cinema_release
 CREATE TABLE cinema_result
   (
     release_id     INT(9)                              NOT NULL,
+    value     INT(9)                              NOT NULL,
     resulttime     DATETIME                              NOT NULL,
     FOREIGN KEY(release_id) REFERENCES cinema_release(id)
   );
