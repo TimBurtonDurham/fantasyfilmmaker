@@ -64,6 +64,12 @@ public class FfmController {
   @Autowired
   ActorDao actorDao;
 
+  @RequestMapping("/welcome")
+  public String index() {
+
+    return "HEY MY INDEX PAGE";
+  }
+
   @RequestMapping("/companies")
   public List<FilmCompany> getCompanies() {
 
